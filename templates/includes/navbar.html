@@ -1,0 +1,35 @@
+<div class="collapse navbar-collapse" id="main-nav">
+    <ul class="navbar-nav w-auto mx-auto">
+        <!-- Home Section -->
+        <li class="nav-item">
+            <a class="logo-font font-weight-bold nav-link text-black mr-5" href="{% url 'home' %}" id="home-link">
+                Home
+            </a>
+        </li>
+        <!-- About Section -->
+        <li class="nav-item">
+            <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" id="about-link">
+                About
+            </a>
+        </li>
+        <!-- Bazaar Section with Dropdown -->
+        <li class="nav-item dropdown">
+            <a class="logo-font font-weight-bold nav-link text-black mr-5 dropdown-toggle" href="#" id="bazaar-link"
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Bazaar
+            </a>
+            <div class="dropdown-menu border-0" aria-labelledby="bazaar-link">
+                <a href="{% url 'bazaar' %}" class="dropdown-item">Main</a>
+                <a href="#" class="dropdown-item">Section 2</a>
+                <a href="#" class="dropdown-item">Section 3</a>
+                <a href="#" class="dropdown-item">Section 4</a>
+            </div>
+        </li>
+        <!-- Contact Section -->
+        <li class="nav-item">
+            <a class="logo-font font-weight-bold nav-link text-black" href="#" id="contact-link">
+                Contact
+            </a>
+        </li>
+    </ul>
+</div>
