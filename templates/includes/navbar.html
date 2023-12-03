@@ -19,8 +19,8 @@
                 Bazaar
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="bazaar-link">
-                <a href="{% url 'bazaar' %}" class="dropdown-item">Main</a>
-                <a href="#" class="dropdown-item">Section 2</a>
+                <a href="{% url 'bazaar' %}?sort=category&direction=asc" class="dropdown-item">All Products</a>
+                <a href="{% url 'bazaar' %}?category=Instruments" class="dropdown-item">Instruments</a>
                 <a href="#" class="dropdown-item">Section 3</a>
                 <a href="#" class="dropdown-item">Section 4</a>
             </div>
