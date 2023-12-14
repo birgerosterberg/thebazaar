@@ -131,7 +131,7 @@
 {% endblock %}
 
 {% block postloadjs %}
-{{ block.super }}
-{% include 'bazaar/includes/qty_in_script.html' %}
-{% include 'bag/includes/upd_rmv.html' %}
+    {{ block.super }}
+        {% include 'bazaar/includes/qty_in_script.html' %}
+        {% include 'bag/includes/upd_rmv.html' %}
 {% endblock %}
