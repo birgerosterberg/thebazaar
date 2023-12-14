@@ -177,6 +177,7 @@ STRIPE_PUBLIC_KEY = config('STRIPE_PUBLIC_KEY', default='')
 STRIPE_SECRET_KEY = config('STRIPE_SECRET_KEY', default='')
 STRIPE_WH_SECRET = config('STRIPE_WH_SECRET', default='')
 
+DEFAULT_FROM_EMAIL = 'birger.osterberg@proton.me'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
