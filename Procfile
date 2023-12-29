@@ -1,0 +1,1 @@
+web: gunicorn sanda_bazaar.wsgi:application
