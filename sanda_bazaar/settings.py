@@ -27,7 +27,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get('SECRET_KEY','secret?_key?')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['thebazaar-30d8729d015c.herokuapp.com',
                  'localhost',
@@ -52,7 +52,7 @@ INSTALLED_APPS = [
     'bag',
     'checkout',
     'profiles',
-    'wishlist',
+    # 'wishlist',
     # Other
     'crispy_forms',
     'storages',
