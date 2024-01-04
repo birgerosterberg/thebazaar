@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="container my-4">
+    <div class="row justify-content-center">
+        <div class="col-12">
+            <h2 class="text-center mb-4">{{ request.user.username }}'s Wishlist</h2>
+            <ul class="list-group">
+                {% for product in request.user.wishlist.products.all %}
+                    <li class="list-group-item">
+                        <div class="row no-gutters align-items-center">
+                            <div class="col-12 col-sm-3">
+                                {% if product.image_url %}
+                                    <img src="{{ product.image_url }}" alt="{{ product.name }}" class="img-fluid">
+                                {% elif product.image %}
+                                    <img src="{{ MEDIA_URL }}{{ product.image }}" alt="{{ product.name }}" class="img-fluid">
+                                {% else %}
+                                    <img src="{{ MEDIA_URL }}noimage.png" alt="Default" class="img-fluid">
+                                {% endif %}
+                            </div>
+                            <div class="col-12 col-sm-9">
+                                <div class="row">
+                                    <div class="col-12 col-md-8 mt-2 mt-sm-0">
+                                        <a href="{% url 'product_detail' product.id %}" class="text-dark text-decoration-none">
+                                            <strong>{{ product.name }}</strong>
+                                        </a>
+                                        <div class="mt-1">${{ product.price }}</div>
+                                    </div>
+                                    <div class="col-12 col-md-4 mt-2 mt-md-0 text-md-right">
+                                        <a href="{% url 'remove_from_wishlist' product.id %}" class="btn btn-danger btn-sm">Remove</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                {% empty %}
+                    <li class="list-group-item">Your wishlist is empty.</li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</div>
+{% endblock %}

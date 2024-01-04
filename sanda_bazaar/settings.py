@@ -52,7 +52,7 @@ INSTALLED_APPS = [
     'bag',
     'checkout',
     'profiles',
-    # 'wishlist',
+    'wishlist',
     # Other
     'crispy_forms',
     'storages',
@@ -220,7 +220,7 @@ STRIPE_WH_SECRET = config('STRIPE_WH_SECRET', default='')
 
 if 'DEVELOPMENT' in os.environ:
     EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-    DEFAULT_FROM_EMAIL = 'birger@example.com'
+    DEFAULT_FROM_EMAIL = 'birger@sandabazaar.se'
 else:
     EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
     EMAIL_USE_TLS = True
