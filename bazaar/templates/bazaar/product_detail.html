@@ -102,8 +102,27 @@
         </div>
     </div>
 </div>
-{% endblock %}
+<h3>Reviews:</h3>
+{% for review in product.reviews.all %}
+    <div>
+        <strong>{{ review.user.username }}</strong>: {{ review.review_text }}
+        <br>
+        <small>Reviewed on {{ review.created_at|date:"Y-m-d" }}</small>
+    </div>
+{% empty %}
+    <p>No reviews yet.</p>
+{% endfor %}
 
+<!-- Conditionally display review form -->
+{% if user.is_authenticated and user_can_review %}
+    <h3>Write a Review:</h3>
+    <form method="POST" action="{% url 'product_detail' product.id %}">
+        {% csrf_token %}
+        <textarea name="review_text" required></textarea>
+        <button type="submit">Submit Review</button>
+    </form>
+{% endif %}
+{% endblock %}
 {% block postloadjs %}
     {{ block.super }}
     {% include 'bazaar/includes/qty_in_script.html' %}

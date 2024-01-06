@@ -3,7 +3,9 @@ from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.db.models.functions import Lower
 from django.db.models import Q
-from .models import Product, Category
+from checkout.models import OrderLineItem
+from profiles.models import UserProfile
+from .models import Product, Category, Review
 from .forms import ProductForm
 
 # Create your views here.
@@ -64,13 +66,23 @@ def bazaar(request):
     return render(request, 'bazaar/bazaar.html', context)
 
 
+@login_required
 def product_detail(request, product_id):
-    """ A view to show individual product details """
-
+    """ A view to show individual product details and handle review submissions """
     product = get_object_or_404(Product, pk=product_id)
+    user_can_review = False
+
+    if request.user.is_authenticated:
+        user_can_review = user_can_review_product(request.user, product)
+
+        if request.method == 'POST' and user_can_review:
+            review_text = request.POST.get('review_text')
+            Review.objects.create(product=product, user=request.user, review_text=review_text)
+            return redirect('product_detail', product_id=product.id)
 
     context = {
         'product': product,
+        'user_can_review': user_can_review,
     }
 
     return render(request, 'bazaar/product_detail.html', context)
@@ -151,3 +163,10 @@ def delete_product(request, product_id):
     product.delete()
     messages.success(request, 'Product deleted!')
     return redirect(reverse('bazaar'))
+
+
+def user_can_review_product(user, product):
+    user_profile = UserProfile.objects.get(user=user)
+    purchased = OrderLineItem.objects.filter(order__user_profile=user_profile, product=product).exists()
+    already_reviewed = Review.objects.filter(user=user, product=product).exists()
+    return purchased and not already_reviewed
