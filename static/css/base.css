@@ -1,6 +1,5 @@
 body {
   background-color: #fff3e0;
-  color: #341907;
 }
 
 .bg-sanddark {
@@ -239,6 +238,20 @@ color: #17a2b8; /* text-info */
   border-color: #dc3545;
   border-radius: 0;
 }
+
+.rating-star {
+  color: grey;
+  cursor: pointer;
+}
+.rating-star.selected, 
+.rating-star:hover, 
+.rating-star:hover ~ .rating-star, 
+.rating-star.selected ~ .rating-star {
+  color: yellow!important; /* Ensure this color is set correctly */
+  cursor: pointer!important;
+
+}
+
 
 
 /* -------------------------------- Media Queries */

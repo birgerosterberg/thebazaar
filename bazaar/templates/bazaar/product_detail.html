@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
+{% load custom_filter %}
 
 {% block page_header %}
 <div class="container header-container">
@@ -102,30 +103,58 @@
         </div>
     </div>
 </div>
-<h3>Reviews:</h3>
-{% for review in product.reviews.all %}
-    <div>
-        <strong>{{ review.user.username }}</strong>: {{ review.review_text }}
-        <br>
-        <small>Reviewed on {{ review.created_at|date:"Y-m-d" }}</small>
+<!-- Reviews Section -->
+<div class="container mt-4">
+    <h3>Reviews:</h3>
+    <div class="row justify-content-center">
+        {% for review in product.reviews.all %}
+            <!-- Each review takes the full width on smaller screens and a portion on larger screens -->
+            <div class="col-12 col-lg-6 mb-3">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ review.user.username }}</h5>
+                        <p class="card-text">{{ review.review_text }}</p>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-muted">Reviewed on {{ review.created_at|date:"Y-m-d" }}</small>
+                    </div>
+                </div>
+            </div>
+        {% empty %}
+            <p class="col-12">No reviews yet.</p>
+        {% endfor %}
     </div>
-{% empty %}
-    <p>No reviews yet.</p>
-{% endfor %}
+</div>
 
-<!-- Conditionally display review form -->
+<!-- Review Form -->
 {% if user.is_authenticated and user_can_review %}
+<div class="container mt-4">
     <h3>Write a Review:</h3>
-    <form method="POST" action="{% url 'product_detail' product.id %}">
-        {% csrf_token %}
-        <textarea name="review_text" required></textarea>
-         <!-- Rating input -->
-        <input type="number" name="rating" min="1" max="5" required> 
-        <button type="submit">Submit Review</button>
-    </form>
+    <div class="row justify-content-center">
+        <div class="col-12 col-md-7 col-lg-5"> <!-- Reduced width -->
+            <form method="POST" action="{% url 'product_detail' product.id %}" class="form">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="review_text">Your Review</label>
+                    <textarea name="review_text" id="review_text" class="form-control" rows="4" required></textarea> <!-- Adjusted height -->
+                </div>
+                <div class="star-rating">
+                    {% for i in 1|upto:6 %}
+                    <i class="far fa-star rating-star" data-value="{{ i }}"></i>
+                    {% endfor %}
+                    <input type="hidden" name="rating" id="rating" required>
+                </div>
+                <button type="submit" class="btn btn-primary mt-2">Submit Review</button>
+                <i class="far fa-star rated-star"></i>
+                <p class="rated-star">STARZ</p>
+            </form>
+        </div>
+    </div>    
+</div>
 {% endif %}
 {% endblock %}
 {% block postloadjs %}
     {{ block.super }}
     {% include 'bazaar/includes/qty_in_script.html' %}
+    {% include 'bazaar/includes/star_rating.html' %}
 {% endblock %}

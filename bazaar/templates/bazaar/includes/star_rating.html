@@ -1,0 +1,28 @@
+<script type="text/javascript">
+    document.addEventListener('DOMContentLoaded', function() {
+        const stars = document.querySelectorAll('.rating-star');
+        stars.forEach(star => {
+            star.addEventListener('click', function() {
+                let rating = this.getAttribute('data-value');
+                document.getElementById('rating').value = rating;
+
+                stars.forEach(s => {
+                    s.classList.remove('selected');  // Remove 'selected' from all stars
+                    s.classList.add('far');          // Add 'far' (empty star) class to all stars
+                    s.classList.remove('fas');       // Remove 'fas' (filled star) class from all stars
+                });
+
+                this.classList.add('selected', 'fas');  // Add 'selected' and 'fas' to the clicked star
+                this.classList.remove('far');           // Remove 'far' from the clicked star
+
+                // Fill in all the stars up to the clicked one
+                let currentStar = this.previousElementSibling;
+                while (currentStar) {
+                    currentStar.classList.add('selected', 'fas');
+                    currentStar.classList.remove('far');
+                    currentStar = currentStar.previousElementSibling;
+                }
+            });
+        });
+    });
+</script>
