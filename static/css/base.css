@@ -242,17 +242,15 @@ color: #17a2b8; /* text-info */
 .rating-star {
   color: grey;
   cursor: pointer;
-}
-.rating-star.selected, 
-.rating-star:hover, 
-.rating-star:hover ~ .rating-star, 
-.rating-star.selected ~ .rating-star {
-  color: yellow!important; /* Ensure this color is set correctly */
-  cursor: pointer!important;
-
+  font-size: 24px;
 }
 
+.rating-star.selected {
+  color: yellow !important; /* Selected stars remain yellow */
+  font-size: 24px;
+  text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black; /* Shadow-based outline */
 
+}
 
 /* -------------------------------- Media Queries */
 

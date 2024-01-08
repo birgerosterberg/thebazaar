@@ -1,28 +1,34 @@
 <script type="text/javascript">
     document.addEventListener('DOMContentLoaded', function() {
         const stars = document.querySelectorAll('.rating-star');
+        let currentRating = 0; // To keep track of the current selected rating
+
         stars.forEach(star => {
             star.addEventListener('click', function() {
-                let rating = this.getAttribute('data-value');
-                document.getElementById('rating').value = rating;
+                currentRating = this.getAttribute('data-value');
+                document.getElementById('rating').value = currentRating;
+                updateStars(currentRating);
+            });
 
-                stars.forEach(s => {
-                    s.classList.remove('selected');  // Remove 'selected' from all stars
-                    s.classList.add('far');          // Add 'far' (empty star) class to all stars
-                    s.classList.remove('fas');       // Remove 'fas' (filled star) class from all stars
-                });
+            star.addEventListener('mouseover', function() {
+                updateStars(this.getAttribute('data-value'));
+            });
 
-                this.classList.add('selected', 'fas');  // Add 'selected' and 'fas' to the clicked star
-                this.classList.remove('far');           // Remove 'far' from the clicked star
-
-                // Fill in all the stars up to the clicked one
-                let currentStar = this.previousElementSibling;
-                while (currentStar) {
-                    currentStar.classList.add('selected', 'fas');
-                    currentStar.classList.remove('far');
-                    currentStar = currentStar.previousElementSibling;
-                }
+            star.addEventListener('mouseout', function() {
+                updateStars(currentRating); // Revert to the current rating after hover
             });
         });
+
+        function updateStars(rating) {
+            stars.forEach((star, index) => {
+                if (index < rating) {
+                    star.classList.add('selected', 'fas');
+                    star.classList.remove('far');
+                } else {
+                    star.classList.remove('selected', 'fas');
+                    star.classList.add('far');
+                }
+            });
+        }
     });
 </script>
