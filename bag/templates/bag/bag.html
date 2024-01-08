@@ -12,6 +12,15 @@
                 <hr>
             </div>
         </div>
+        <!-- Voucher Entry Form -->
+        <form action="{% url 'apply_voucher' %}" method="POST" class="form-inline justify-content-end">
+            {% csrf_token %}
+            <div class="form-group mx-sm-3 mb-2">
+                <label for="id_voucher_code" class="sr-only">{{ voucher_form.voucher_code.label }}</label>
+                <input type="text" id="id_voucher_code" name="voucher_code" class="form-control" placeholder="{{ voucher_form.voucher_code.label }}">
+            </div>
+            <button type="submit" class="btn btn-black rounded-0">Apply Voucher</button>
+        </form>        
         {% if bag_items %}
         {% for item in bag_items %}
             <div class="row mb-3">
@@ -91,7 +100,22 @@
                 <span class="text-uppercase">Keep Shopping</span>
             </a>
         {% endif %}
-
+        {% if applied_voucher %}
+        <div class="row">
+            <div class="col">
+                <div class="alert alert-success" role="alert">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div>
+                            <p class="mb-0">Applied Voucher: {{ applied_voucher.code }} ({{ applied_voucher.discount_percentage }}% off)</p>
+                            <p class="mb-0">Discount Amount: ${{ discount_amount|floatformat:2 }}</p>
+                        </div>
+                        <a href="{% url 'remove_voucher' %}" class="btn btn-danger btn-sm">Remove Voucher</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endif %}
+        
         <!-- Total Calculations -->
         <div class="row">
             <div class="col text-right">
