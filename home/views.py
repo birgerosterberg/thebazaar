@@ -1,9 +1,7 @@
 from django.shortcuts import render
-
-# Create your views here.
-
+from bazaar.models import Product
 
 def index(request):
-    """ A view to return the index homepage """
-
-    return render(request, 'home/index.html')
+    # Fetch the top 8 products with the highest rating
+    top_products = Product.objects.all().order_by('-rating', '-id')[:12]
+    return render(request, 'home/index.html', {'products': top_products})

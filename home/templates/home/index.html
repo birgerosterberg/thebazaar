@@ -2,7 +2,86 @@
 {% load static %}
 
 {% block content %}
-<img src="{{ MEDIA_URL }}biglogo50.webp" alt="big logo in home"></a>
+<div class="container text-center">
+    <img src="{{ MEDIA_URL }}biglogo50.webp" alt="big logo in home" class="mx-auto d-block img-fluid" style="max-width: 300px;">
 
-<h1 class=" display-4 text-success">First test of the Sanda Bazaar!</h1>
+    <!-- Carousel for Desktop (4 items per slide) -->
+    <div id="productCarouselDesktop" class="carousel slide d-none d-lg-block" data-ride="carousel">
+        <div class="carousel-inner">
+            {% for product in products %}
+            {% if forloop.counter0|divisibleby:4 %}
+            {% if not forloop.first %}
+            </div></div> <!-- Close the previous row and carousel-item -->
+            {% endif %}
+            <div class="carousel-item {% if forloop.first %}active{% endif %}">
+                <div class="row justify-content-center">
+            {% endif %}
+                    <div class="col-lg-3 d-flex align-items-stretch">
+                        <div class="card card-carousel w-100">
+                            {% if product.image_url %}
+                                <img class="card-img-top card-img-top-carousel" src="{{ product.image_url }}" alt="{{ product.name }}">
+                            {% elif product.image %}
+                                <img class="card-img-top card-img-top-carousel" src="{{ product.image.url }}" alt="{{ product.name }}">
+                            {% else %}
+                                <img class="card-img-top card-img-top-carousel" src="{{ MEDIA_URL }}noimage.png" alt="Default Image">
+                            {% endif %}
+                            <div class="card-body card-body-carousel">
+                                <h5 class="card-title">{{ product.name }}</h5>
+                                <p class="card-text">{{ product.description }}</p>
+                                <a href="{% url 'product_detail' product.id %}" class="btn btn-primary">View Product</a>
+                            </div>
+                        </div>
+                    </div>
+            {% if forloop.counter|divisibleby:4 or forloop.last %}
+                </div>
+            </div>
+            {% endif %}
+            {% endfor %}
+        </div>
+        <!-- Carousel controls -->
+        <a class="carousel-control-prev" href="#productCarouselDesktop" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#productCarouselDesktop" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+
+    <!-- Carousel for Mobile (1 item per slide) -->
+    <div id="productCarouselMobile" class="carousel slide d-lg-none" data-ride="carousel">
+        <div class="carousel-inner">
+            {% for product in products %}
+                <div class="carousel-item {% if forloop.first %}active{% endif %}">
+                    <div class="card card-carousel w-100 text-center">
+                        {% if product.image_url %}
+                            <img class="card-img-top card-img-top-carousel" src="{{ product.image_url }}" alt="{{ product.name }}">
+                        {% elif product.image %}
+                            <img class="card-img-top card-img-top-carousel" src="{{ product.image.url }}" alt="{{ product.name }}">
+                        {% else %}
+                            <img class="card-img-top card-img-top-carousel" src="{{ MEDIA_URL }}noimage.png" alt="Default Image">
+                        {% endif %}
+                        <div class="card-body card-body-carousel">
+                            <h5 class="card-title">{{ product.name }}</h5>
+                            <p class="card-text">{{ product.description }}</p>
+                            <a href="{% url 'product_detail' product.id %}" class="btn btn-primary">View Product</a>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+        <!-- Carousel controls -->
+        <a class="carousel-control-prev" href="#productCarouselMobile" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#productCarouselMobile" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+        
+    </div>
+
+</div>
 {% endblock %}
