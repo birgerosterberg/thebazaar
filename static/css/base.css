@@ -1,5 +1,15 @@
 body {
-  background-color: #fff3e0;
+  /* background-color: #fff3e0; */
+    --s: 45px; /* control the size */
+    
+    --_g: #0000 83%,#fbe7ce 85% 99%,#0000 101%;
+    background:
+      radial-gradient(27% 29% at right ,var(--_g)) calc(var(--s)/ 2) var(--s),
+      radial-gradient(27% 29% at left  ,var(--_g)) calc(var(--s)/-2) var(--s),
+      radial-gradient(29% 27% at top   ,var(--_g)) 0 calc(var(--s)/ 2),
+      radial-gradient(29% 27% at bottom,var(--_g)) 0 calc(var(--s)/-2)
+      #fff3e0;
+    background-size: calc(2*var(--s)) calc(2*var(--s));
 }
 
 .bg-sanddark {
@@ -267,6 +277,48 @@ color: #17a2b8; /* text-info */
 .card-body-carousel {
   overflow: hidden; /* Hide text that overflows the card body */
   text-overflow: ellipsis; /* Adds an ellipsis to text that overflows */
+}
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-size: 60%;
+    border: 3px solid #000; /* Black border for outline effect */
+    border-radius: 50%; /* Circular shape */
+    width: 40px; /* Control size */
+    height: 40px; /* Control size */
+    background-color: #000;
+  }
+
+  /* Introductory text section with a Middle Eastern pattern */
+.intro-text-section {
+  border: 2px solid #a8742f; /* Black border for outline effect */
+  --mask: radial-gradient(60px at 60px 60px,#0000 98%,#000) -60px -60px;
+  -webkit-mask: var(--mask);
+          mask: var(--mask);
+  background-color: #fff3e0; /* Fallback background color */
+  background-image: url('/static/images/epwaemt1.webp'); /* Middle Eastern pattern */
+  background-repeat: repeat; /* Tile the background image */
+  padding: 20px; /* Some padding around the text */
+}
+
+/* Additional styling to ensure readability over the pattern */
+.intro-text-section-text {
+  border: 1px solid #a8742f; /* Black border for outline effect */
+  background-color: rgba(255, 243, 224, 0.6); /* Semi-transparent layer */
+  padding: 5px;
+  border-radius: 50px;
+}
+
+.amazing-background {
+  --s: 60px; /* control the size */
+  
+  --_g: #fff3e0 83%,#a8742f 85% 99%,##fff3e0 101%;
+  background:
+    radial-gradient(27% 29% at right ,var(--_g)) calc(var(--s)/ 2) var(--s),
+    radial-gradient(27% 29% at left  ,var(--_g)) calc(var(--s)/-2) var(--s),
+    radial-gradient(29% 27% at top   ,var(--_g)) 0 calc(var(--s)/ 2),
+    radial-gradient(29% 27% at bottom,var(--_g)) 0 calc(var(--s)/-2)
+    #fff3e0;
+  background-size: calc(2*var(--s)) calc(2*var(--s));
 }
 
 /* -------------------------------- Media Queries */

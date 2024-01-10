@@ -3,8 +3,39 @@
 
 {% block content %}
 <div class="container text-center">
+    <div class="my-4"></div> <!-- Spacer -->
     <img src="{{ MEDIA_URL }}biglogo50.webp" alt="big logo in home" class="mx-auto d-block img-fluid" style="max-width: 300px;">
-
+    <div class="my-5"></div> <!-- Spacer -->
+    <div class="row py-4 intro-text-section">
+        <div class="col-lg-10 mx-auto">
+            <!-- Grouped Heading and Subheading -->
+            <div class="mb-4 intro-text-section-text">
+                <h1 class="display-4 font-weight-bold">Discover the Wonders of Sanda Bazaar</h1>
+                <p class="h3">A Treasure Trove on Gotland</p>
+            </div>
+    
+    
+            <!-- Grouped Text Descriptions -->
+            <div class="row intro-text-section-text my-2">
+                <div class="col-md-4 my-2">
+                    <i class="fas fa-globe-americas h1 my-1"></i>
+                    <p class="font-weight-bold text-large h4">Global Selection</p>
+                    <p class="h5">Curated items from across the globe, each with its own story and charm.</p>
+                </div>
+                <div class="col-md-4 my-2">
+                    <i class="fas fa-store h1 my-1"></i>
+                    <p class="font-weight-bold h4">Summer Store</p>
+                    <p class="h5">Visit our physical store in Gotland for antiques and unique finds.</p>
+                </div>
+                <div class="col-md-4 my-2">
+                    <i class="fas fa-ice-cream h1 my-1"></i>
+                    <p class="font-weight-bold h4">Enjoy a Treat</p>
+                    <p class="h5">Relax with a cup of coffee, a biscuit, or a delightful gelato.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="my-5"></div> <!-- Spacer -->
     <!-- Carousel for Desktop (4 items per slide) -->
     <div id="productCarouselDesktop" class="carousel slide d-none d-lg-block" data-ride="carousel">
         <div class="carousel-inner">
@@ -27,7 +58,6 @@
                             {% endif %}
                             <div class="card-body card-body-carousel">
                                 <h5 class="card-title">{{ product.name }}</h5>
-                                <p class="card-text">{{ product.description }}</p>
                                 <a href="{% url 'product_detail' product.id %}" class="btn btn-primary">View Product</a>
                             </div>
                         </div>
@@ -48,7 +78,6 @@
             <span class="sr-only">Next</span>
         </a>
     </div>
-
     <!-- Carousel for Mobile (1 item per slide) -->
     <div id="productCarouselMobile" class="carousel slide d-lg-none" data-ride="carousel">
         <div class="carousel-inner">
@@ -64,7 +93,6 @@
                         {% endif %}
                         <div class="card-body card-body-carousel">
                             <h5 class="card-title">{{ product.name }}</h5>
-                            <p class="card-text">{{ product.description }}</p>
                             <a href="{% url 'product_detail' product.id %}" class="btn btn-primary">View Product</a>
                         </div>
                     </div>
@@ -80,8 +108,8 @@
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="sr-only">Next</span>
         </a>
-        
     </div>
+    <div class="my-5"></div> <!-- Spacer -->
 
 </div>
 {% endblock %}

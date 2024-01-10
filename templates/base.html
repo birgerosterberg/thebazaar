@@ -142,6 +142,51 @@
     {% endblock %}
     {% block content %}
     {% endblock %}
+    <footer class="bg-sanddark text-white pt-4 pb-4">
+      <div class="container">
+          <div class="row">
+              <!-- Social Media Links -->
+              <div class="col-md-4 mb-3">
+                  <h5>Follow Us</h5>
+                  <a href="#" class="text-white me-2">
+                      <i class="fab fa-facebook-f"></i>
+                  </a>
+                  <a href="#" class="text-white me-2">
+                      <i class="fab fa-twitter"></i>
+                  </a>
+                  <a href="#" class="text-white me-2">
+                      <i class="fab fa-instagram"></i>
+                  </a>
+                  <!-- Add other social media links as needed -->
+              </div>
+  
+              <!-- Address -->
+              <div class="col-md-4 mb-3">
+                  <h5>Visit Us</h5>
+                  <address>
+                      Sanda Nystugu 573, <br>
+                      Gotland, Sweden 623 79
+                  </address>
+              </div>
+  
+              <!-- Newsletter Signup (Placeholder) -->
+              <div class="col-md-4 mb-3">
+                  <h5>Newsletter</h5>
+                  <form>
+                      <div class="mb-3">
+                          <input type="email" class="form-control" placeholder="Email Address">
+                      </div>
+                      <button type="submit" class="btn btn-primary">Sign Up</button>
+                  </form>
+              </div>
+              <div class="row mt-3">
+                <div class="col text-center">
+                    &copy; <script>document.write(new Date().getFullYear());</script> Sanda Bazaar. All rights reserved.
+                </div>
+            </div>
+          </div>
+      </div>
+  </footer>
     {% block postloadjs %}
       <script type="text/javascript">
         $('.toast').toast('show');
