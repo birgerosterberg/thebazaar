@@ -1,7 +1,15 @@
 from django.shortcuts import render
 from bazaar.models import Product
+from opening_hours.views import get_todays_hours, get_weekly_hours
 
 def index(request):
-    # Fetch the top 8 products with the highest rating
-    top_products = Product.objects.all().order_by('-rating', '-id')[:12]
-    return render(request, 'home/index.html', {'products': top_products})
+    products = Product.objects.all().order_by('-rating')[:12]
+    today_hours = get_todays_hours()
+    weekly_hours = get_weekly_hours()
+
+    context = {
+        'products': products,
+        'today_hours': today_hours,
+        'weekly_hours': weekly_hours
+    }
+    return render(request, 'home/index.html', context)

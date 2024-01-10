@@ -5,6 +5,17 @@
 <div class="container text-center">
     <div class="my-4"></div> <!-- Spacer -->
     <img src="{{ MEDIA_URL }}biglogo50.webp" alt="big logo in home" class="mx-auto d-block img-fluid" style="max-width: 300px;">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                {% if today_hours %}
+                    <p>Open {{ today_hours }}</p>
+                {% else %}
+                    <p>We're closed today.</p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
     <div class="my-5"></div> <!-- Spacer -->
     <div class="row py-4 intro-text-section">
         <div class="col-lg-10 mx-auto">
@@ -13,8 +24,6 @@
                 <h1 class="display-4 font-weight-bold">Discover the Wonders of Sanda Bazaar</h1>
                 <p class="h3">A Treasure Trove on Gotland</p>
             </div>
-    
-    
             <!-- Grouped Text Descriptions -->
             <div class="row intro-text-section-text my-2">
                 <div class="col-md-4 my-2">
@@ -110,6 +119,25 @@
         </a>
     </div>
     <div class="my-5"></div> <!-- Spacer -->
-
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <h2 class="mb-4">Weekly Opening Hours</h2>
+                {% if weekly_hours %}
+                    <div class="list-unstyled">
+                        <p><strong>Monday:</strong> {{ weekly_hours.monday|default:"Closed" }}</p>
+                        <p><strong>Tuesday:</strong> {{ weekly_hours.tuesday|default:"Closed" }}</p>
+                        <p><strong>Wednesday:</strong> {{ weekly_hours.wednesday|default:"Closed" }}</p>
+                        <p><strong>Thursday:</strong> {{ weekly_hours.thursday|default:"Closed" }}</p>
+                        <p><strong>Friday:</strong> {{ weekly_hours.friday|default:"Closed" }}</p>
+                        <p><strong>Saturday:</strong> {{ weekly_hours.saturday|default:"Closed" }}</p>
+                        <p><strong>Sunday:</strong> {{ weekly_hours.sunday|default:"Closed" }}</p>
+                    </div>
+                {% else %}
+                    <p class="text-muted">Opening hours are not available.</p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
 </div>
 {% endblock %}
