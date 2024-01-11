@@ -3,30 +3,11 @@
 
 {% block content %}
 <div class="container text-center">
-    <div class="my-4"></div> <!-- Spacer -->
-    <img src="{{ MEDIA_URL }}biglogo50.webp" alt="big logo in home" class="mx-auto d-block img-fluid" style="max-width: 300px;">
-    <div class="container my-4">
-        <div class="row justify-content-center">
-            <div class="col-md-8">
-                <div class="card text-center">
-                    <div class="card-header bg-sanddark">
-                        <h3>Today's Opening Hours</h3>
-                    </div>
-                    <div class="card-body bg-sandlight">
-                        {% if today_hours %}
-                            <p class="card-text">We are open from <strong>{{ today_hours }}</strong></p>
-                        {% else %}
-                            <p class="card-text">We're closed today.</p>
-                        {% endif %}
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    
+    <div class="my-5"></div> <!-- Spacer -->
+        <img src="{{ MEDIA_URL }}biglogo50.webp" alt="big logo in home" class="shadow-break mx-auto d-block img-fluid">
     <div class="my-5"></div> <!-- Spacer -->
     <div class="row py-4 intro-text-section">
-        <div class="col-lg-10 mx-auto">
+        <div class="col-lg-10 mx-auto ">
             <!-- Grouped Heading and Subheading -->
             <div class="mb-4 intro-text-section-text">
                 <h1 class="display-4 font-weight-bold">Discover the Wonders of Sanda Bazaar</h1>
@@ -53,6 +34,24 @@
         </div>
     </div>
     <div class="my-5"></div> <!-- Spacer -->
+    <div class="container my-4">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card text-center">
+                    <div class="card-header bg-sanddark">
+                        <h3>Today's Opening Hours</h3>
+                    </div>
+                    <div class="card-body bg-sandlight">
+                        {% if today_hours %}
+                            <p class="card-text">We are open from <strong>{{ today_hours }}</strong></p>
+                        {% else %}
+                            <p class="card-text">We're closed today.</p>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <!-- Carousel for Desktop (4 items per slide) -->
     <div id="productCarouselDesktop" class="carousel slide d-none d-lg-block" data-ride="carousel">
         <div class="carousel-inner">

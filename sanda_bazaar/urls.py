@@ -31,6 +31,7 @@ urlpatterns = [
     path('wishlist/', include('wishlist.urls')),
     path('voucher/', include('voucher.urls')),
     path('contact/', include('contact.urls')),
+    path('about/', include('about.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 handler404 = 'sanda_bazaar.views.handler404'

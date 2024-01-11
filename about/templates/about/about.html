@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="container my-5">
+    <!-- Top Image -->
+    <div class="row mb-5 justify-content-center">
+        <div class="col-md-8">
+            <img src="{{ MEDIA_URL }}biglogo50.webp" alt="big logo in home" class="shadow-break mx-auto d-block img-fluid">
+        </div>
+    </div>
+    <div class="container my-5">
+        <div class="text-center">
+            <h1>Welcome to Sanda Bazaar</h1>
+            <p class="lead font-size-text">A cultural oasis on Gotland</p>
+        </div>
+    
+        <!-- First Section -->
+        <div class="row mt-4">
+            <div class="col-md-8">
+                <div class="p-4 bg-light">
+                    <h3 class="mb-3">Our Vision</h3>
+                    <p class="font-size-text">At Sanda Bazaar, we believe in creating a space that celebrates diversity and fosters connections. Imagine a place where the music, food, and artifacts tell stories of distant lands...</p>
+                </div>
+            </div>
+        </div>
+    
+        <!-- Second Section -->
+        <div class="row mt-4">
+            <div class="col-md-6 offset-md-3">
+                <div class="p-4 bg-sanddark">
+                    <h3 class="mb-3">Your Escape in Gotland</h3>
+                    <p class="font-size-text">Located near the serene coast, Sanda Bazaar offers a tranquil retreat. It's a place where you can unwind, explore, and discover...</p>
+                </div>
+            </div>
+        </div>
+    
+        <!-- Third Section -->
+        <div class="row mt-4">
+            <div class="col-lg-4 col-md-6">
+                <div class="p-4 bg-sandlight">
+                    <h3 class="mb-3">A Blend of Cultures</h3>
+                    <p class="font-size-text">Our collection is a tapestry of global cultures. Each item in the bazaar has a unique origin, bringing with it a piece of its homeland...</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="p-4 bg-light">
+                    <h3 class="mb-3">Future Dreams</h3>
+                    <p class="font-size-text">We're not just a marketplace. Our vision includes hosting cultural events, opening a restaurant featuring home-grown ingredients, and more...</p>
+                </div>
+            </div>
+        </div>
+    
+        <!-- Image Section -->
+        <div class="text-center my-5">
+            <img src="{{ MEDIA_URL }}oldgotland.png" alt="Bottom Image Description" class="img-fluid rounded mx-auto d-block">
+        </div>
+    
+        <!-- Final Section -->
+        <div class="row">
+            <div class="col">
+                <div class="p-4 bg-sanddark">
+                    <h3 class="mb-3">Join Our Journey</h3>
+                    <p class="font-size-text">Be a part of our story at Sanda Bazaar. Visit us, share your stories, and take home a piece of this magical place...</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

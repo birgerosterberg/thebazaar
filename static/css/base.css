@@ -10,13 +10,26 @@ body {
       radial-gradient(29% 27% at bottom,var(--_g)) 0 calc(var(--s)/-2)
       #fff3e0;
     background-size: calc(2*var(--s)) calc(2*var(--s));
+  /* font-family: 'Alegreya', serif; */
+  font-family: 'Eczar', serif;
+  font-size: 1rem;
 }
 
 .bg-sanddark {
   background-color: #a8742f;
 }
+.color-sanddark {
+  color: #a8742f;
+}
+
 .bg-sandlight {
   background-color: #f3c893;
+}
+.color-sandlight {
+  color: #f3c893;
+}
+.font-size-text {
+  font-size: 1.6rem;
 }
 html {
   height: 100%;
@@ -307,6 +320,11 @@ color: #17a2b8; /* text-info */
   padding: 5px;
   border-radius: 50px;
 }
+.shadow-break {
+  box-shadow: 
+  5px 0 100px rgba(255, 243, 224, 0.8),   /* right shadow */
+  -5px 0 100px rgba(255, 243, 224, 0.8),  /* left shadow */
+  0 5px 100px rgba(255, 243, 224, 0.8);   /* bottom shadow */}
 
 .amazing-background {
   --s: 60px; /* control the size */
