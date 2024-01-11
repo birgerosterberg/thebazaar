@@ -5,17 +5,25 @@
 <div class="container text-center">
     <div class="my-4"></div> <!-- Spacer -->
     <img src="{{ MEDIA_URL }}biglogo50.webp" alt="big logo in home" class="mx-auto d-block img-fluid" style="max-width: 300px;">
-    <div class="container">
-        <div class="row">
-            <div class="col">
-                {% if today_hours %}
-                    <p>Open {{ today_hours }}</p>
-                {% else %}
-                    <p>We're closed today.</p>
-                {% endif %}
+    <div class="container my-4">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card text-center">
+                    <div class="card-header bg-sanddark">
+                        <h3>Today's Opening Hours</h3>
+                    </div>
+                    <div class="card-body bg-sandlight">
+                        {% if today_hours %}
+                            <p class="card-text">We are open from <strong>{{ today_hours }}</strong></p>
+                        {% else %}
+                            <p class="card-text">We're closed today.</p>
+                        {% endif %}
+                    </div>
+                </div>
             </div>
         </div>
     </div>
+    
     <div class="my-5"></div> <!-- Spacer -->
     <div class="row py-4 intro-text-section">
         <div class="col-lg-10 mx-auto">
@@ -119,25 +127,41 @@
         </a>
     </div>
     <div class="my-5"></div> <!-- Spacer -->
-    <div class="container">
-        <div class="row">
-            <div class="col">
-                <h2 class="mb-4">Weekly Opening Hours</h2>
-                {% if weekly_hours %}
-                    <div class="list-unstyled">
-                        <p><strong>Monday:</strong> {{ weekly_hours.monday|default:"Closed" }}</p>
-                        <p><strong>Tuesday:</strong> {{ weekly_hours.tuesday|default:"Closed" }}</p>
-                        <p><strong>Wednesday:</strong> {{ weekly_hours.wednesday|default:"Closed" }}</p>
-                        <p><strong>Thursday:</strong> {{ weekly_hours.thursday|default:"Closed" }}</p>
-                        <p><strong>Friday:</strong> {{ weekly_hours.friday|default:"Closed" }}</p>
-                        <p><strong>Saturday:</strong> {{ weekly_hours.saturday|default:"Closed" }}</p>
-                        <p><strong>Sunday:</strong> {{ weekly_hours.sunday|default:"Closed" }}</p>
-                    </div>
-                {% else %}
-                    <p class="text-muted">Opening hours are not available.</p>
-                {% endif %}
+    <!-- Weekly Opening Hours -->
+    <div class="container my-5">
+        <h2 class="mb-4 text-center">Weekly Opening Hours</h2>
+        {% if weekly_hours %}
+            <div class="row justify-content-center">
+                <div class="col-md-6 bg-sanddark">
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item d-flex justify-content-between align-items-center bg-sandlight">
+                            <strong>Monday:</strong> <strong>{{ weekly_hours.monday|default:"Closed" }}</strong>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center bg-sandlight">
+                            <strong>Tuesday:</strong> <strong>{{ weekly_hours.tuesday|default:"Closed" }}</strong>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center bg-sandlight">
+                            <strong>Wednesday:</strong> <strong>{{ weekly_hours.wednesday|default:"Closed" }}</strong>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center bg-sandlight">
+                            <strong>Thursday:</strong> <strong>{{ weekly_hours.thursday|default:"Closed" }}</strong>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center bg-sandlight">
+                            <strong>Friday:</strong> <strong>{{ weekly_hours.friday|default:"Closed" }}</strong>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center bg-sandlight">
+                            <strong>Saturday:</strong> <strong>{{ weekly_hours.saturday|default:"Closed" }}</strong>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center bg-sandlight">
+                            <strong>Sunday:</strong> <strong>{{ weekly_hours.sunday|default:"Closed" }}</strong>
+                        </li>
+                    </ul>
+                </div>
             </div>
-        </div>
+        {% else %}
+            <p class="text-muted text-center">Opening hours are not available.</p>
+        {% endif %}
     </div>
+    
 </div>
 {% endblock %}

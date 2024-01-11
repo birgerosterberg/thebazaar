@@ -1,0 +1,80 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="container text-center">
+    <div class="my-4"></div> <!-- Spacer -->
+    <img src="{{ MEDIA_URL }}biglogo50.webp" alt="big logo in home" class="mx-auto d-block img-fluid" style="max-width: 300px;">
+
+    <!-- Contact Information -->
+    <div class="row py-4">
+        <div class="col-lg-10 mx-auto">
+            <h1 class="display-4 font-weight-bold">Contact Sanda Bazaar</h1>
+            <p class="h3 text-muted mb-4">Connect with us!</p>
+
+            <!-- Icons and Text Centered -->
+            <div class="row">
+                <div class="col-md-4 mb-3 text-center">
+                    <i class="fas fa-map-marker-alt fa-2x text-primary mb-2"></i>
+                    <h4>Visit Us</h4>
+                    <p>Sanda Nystugu 573, 623 79, Gotland, Sweden</p>
+                </div>
+                <div class="col-md-4 mb-3 text-center">
+                    <i class="fas fa-envelope fa-2x text-primary mb-2"></i>
+                    <h4>Email Us</h4>
+                    <p>sandabazaar@gmail.com</p>
+                </div>
+                <div class="col-md-4 mb-3 text-center">
+                    <i class="fas fa-phone-alt fa-2x text-primary mb-2"></i>
+                    <h4>Call Us</h4>
+                    <p>+46 123 456 789</p>
+                </div>
+            </div>
+
+            <!-- Google Maps Integration -->
+            <div class="mt-4">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d81874.38964569918!2d18.182150057648116!3d57.40686425523649!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46f7a1db1ee5a00b%3A0x38444191b5144cd9!2sSANDA%20NYSTUGU%20573%2C%20623%2079%20Klintehamn!5e1!3m2!1ssv!2sse!4v1704987553125!5m2!1ssv!2sse"
+                    width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </div>
+    </div>
+
+    <!-- Weekly Opening Hours -->
+    <div class="container my-5">
+        <h2 class="mb-4 text-center">Weekly Opening Hours</h2>
+        {% if weekly_hours %}
+            <div class="row justify-content-center">
+                <div class="col-md-6 bg-sanddark">
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item d-flex justify-content-between align-items-center bg-sandlight">
+                            <strong>Monday:</strong> <strong>{{ weekly_hours.monday|default:"Closed" }}</strong>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center bg-sandlight">
+                            <strong>Tuesday:</strong> <strong>{{ weekly_hours.tuesday|default:"Closed" }}</strong>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center bg-sandlight">
+                            <strong>Wednesday:</strong> <strong>{{ weekly_hours.wednesday|default:"Closed" }}</strong>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center bg-sandlight">
+                            <strong>Thursday:</strong> <strong>{{ weekly_hours.thursday|default:"Closed" }}</strong>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center bg-sandlight">
+                            <strong>Friday:</strong> <strong>{{ weekly_hours.friday|default:"Closed" }}</strong>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center bg-sandlight">
+                            <strong>Saturday:</strong> <strong>{{ weekly_hours.saturday|default:"Closed" }}</strong>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center bg-sandlight">
+                            <strong>Sunday:</strong> <strong>{{ weekly_hours.sunday|default:"Closed" }}</strong>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        {% else %}
+            <p class="text-muted text-center">Opening hours are not available.</p>
+        {% endif %}
+    </div>
+    
+</div>
+{% endblock %}
