@@ -2,34 +2,30 @@
     <ul class="navbar-nav w-auto mx-auto">
         <!-- Home Section -->
         <li class="nav-item">
-            <a class="logo-font font-weight-bold nav-link text-black mr-5" href="{% url 'home' %}" id="home-link">
-                Home
-            </a>
+            <a class="logo-font font-weight-bold nav-link text-black mr-5" href="{% url 'home' %}" id="home-link">Home</a>
         </li>
         <!-- About Section -->
         <li class="nav-item">
-            <a class="logo-font font-weight-bold nav-link text-black mr-5" href="{% url 'about' %}" id="about-link">
-                About
-            </a>
+            <a class="logo-font font-weight-bold nav-link text-black mr-5" href="{% url 'about' %}" id="about-link">About</a>
         </li>
         <!-- Bazaar Section with Dropdown -->
         <li class="nav-item dropdown">
             <a class="logo-font font-weight-bold nav-link text-black mr-5 dropdown-toggle" href="#" id="bazaar-link"
-                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Bazaar
-            </a>
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Bazaar</a>
             <div class="dropdown-menu border-0" aria-labelledby="bazaar-link">
                 <a href="{% url 'bazaar' %}?sort=category&direction=asc" class="dropdown-item">All Products</a>
                 <a href="{% url 'bazaar' %}?category=Instruments" class="dropdown-item">Instruments</a>
-                <a href="#" class="dropdown-item">Section 3</a>
-                <a href="#" class="dropdown-item">Section 4</a>
+                <a href="{% url 'bazaar' %}?category=Soap" class="dropdown-item">Soaps</a>
+                <a href="{% url 'bazaar' %}?category=Candle" class="dropdown-item">Candles</a>
             </div>
+        </li>
+        <!-- Blog Section -->
+        <li class="nav-item">
+            <a class="logo-font font-weight-bold nav-link text-black" href="{% url 'blog_index' %}" id="contact-link">Blog</a>
         </li>
         <!-- Contact Section -->
         <li class="nav-item">
-            <a class="logo-font font-weight-bold nav-link text-black" href="{% url 'contact' %}" id="contact-link">
-                Contact
-            </a>
+            <a class="logo-font font-weight-bold nav-link text-black" href="{% url 'contact' %}" id="contact-link">Contact</a>
         </li>
     </ul>
 </div>

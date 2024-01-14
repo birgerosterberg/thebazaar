@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="container mt-4">
+    <div class="container mx-auto"> <!-- Use container class and mx-auto to center -->
+        <div class="row mt-5 mb-5 justify-content-center">
+            <div class="col-md-8">
+                <img src="{{ MEDIA_URL }}biglogo50.webp" alt="big sanda bazaar logo in home" class="shadow-break mx-auto d-block img-fluid">
+            </div>
+        </div>
+        {% for post in posts %}
+        <div class="row justify-content-center">
+            <div class="col-2xl-4 col-xl-6 col-lg-6 col-md-12 col-sm-12 mb-4">
+                <div class="card shadow-sm">
+                    {% if post.image %}
+                    <img src="{{ post.image.url }}" class="card-img-top blog-post-image" alt="{{ post.title }}">
+                    {% endif %}
+                    <div class="card-body">
+                        <h2 class="card-title">{{ post.title }}</h2>
+                        <p class="card-text font-size-text">{{ post.content|safe }}</p>
+                        <!-- Additional details can be added here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% empty %}
+        <p class="text-center">No blog posts available.</p>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

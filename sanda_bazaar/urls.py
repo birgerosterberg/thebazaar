@@ -32,6 +32,9 @@ urlpatterns = [
     path('voucher/', include('voucher.urls')),
     path('contact/', include('contact.urls')),
     path('about/', include('about.urls')),
+    path('summernote/', include('django_summernote.urls')),
+    path('blog/', include('blog.urls')),
+
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 handler404 = 'sanda_bazaar.views.handler404'

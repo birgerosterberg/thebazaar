@@ -58,9 +58,11 @@ INSTALLED_APPS = [
     'opening_hours',
     'contact',
     'about',
+    'blog',
     # Other
     'crispy_forms',
     'storages',
+    'django_summernote',
 ]
 
 MIDDLEWARE = [
