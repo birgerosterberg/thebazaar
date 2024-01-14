@@ -340,7 +340,7 @@ color: #17a2b8; /* text-info */
 }
 
 .blog-post-image {
-  max-height: 200px;
+  max-height: 300px;
   object-fit: cover;
 }
 
