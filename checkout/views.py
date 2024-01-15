@@ -12,7 +12,6 @@ from bazaar.models import Product
 from bag.contexts import bag_contents
 from profiles.models import UserProfile
 from profiles.forms import UserProfileForm
-from voucher.models import Voucher
 
 import stripe
 import json
@@ -54,37 +53,12 @@ def checkout(request):
             'county': request.POST['county'],
         }
         order_form = OrderForm(form_data)
-        
         if order_form.is_valid():
-            # Apply voucher if provided
-            voucher_code = request.POST.get('voucher_code')
-            voucher = None
-            if voucher_code:
-                try:
-                    voucher = Voucher.objects.get(code=voucher_code, active=True)
-                except Voucher.DoesNotExist:
-                    messages.error(request, 'Invalid voucher code.')
-
-            if voucher:
-                # Calculate the discounted total
-                discount_percentage = voucher.discount_percentage / 100
-                total = current_bag['grand_total']
-                discounted_total = total * (1 - discount_percentage)
-
-                # Update the order with the discounted total
-                order = order_form.save(commit=False)
-                pid = request.POST.get('client_secret').split('_secret')[0]
-                order.stripe_pid = pid
-                order.original_bag = json.dumps(bag)
-                order.total = discounted_total  # Set the discounted total
-                order.save()
-            else:
-                order = order_form.save(commit=False)
-                pid = request.POST.get('client_secret').split('_secret')[0]
-                order.stripe_pid = pid
-                order.original_bag = json.dumps(bag)
-                order.save()
-
+            order = order_form.save(commit=False)
+            pid = request.POST.get('client_secret').split('_secret')[0]
+            order.stripe_pid = pid
+            order.original_bag = json.dumps(bag)
+            order.save()
             for item_id, item_data in bag.items():
                 try:
                     product = Product.objects.get(id=item_id)
@@ -109,18 +83,18 @@ def checkout(request):
             request.session['save_info'] = 'save-info' in request.POST
             return redirect(
                 reverse('checkout_success', args=[order.order_number])
-            )
+                )
         else:
             messages.error(
                 request, 'There was an error with your form. \
                 Please double check your information.'
-            )
+                )
     else:
         bag = request.session.get('bag', {})
         if not bag:
             messages.error(
                 request, "There's nothing in your bag at the moment"
-            )
+                )
             return redirect(reverse('products'))
 
         current_bag = bag_contents(request)
@@ -164,6 +138,7 @@ def checkout(request):
 
     return render(request, template, context)
 
+
 def checkout_success(request, order_number):
     """
     Handle successful checkouts
@@ -172,13 +147,13 @@ def checkout_success(request, order_number):
     order = get_object_or_404(Order, order_number=order_number)
 
     if request.user.is_authenticated:
-        profile = get_object_or_404(UserProfile, user=request.user)
+        profile = UserProfile.objects.get(user=request.user)
         # Attach the user's profile to the order
         order.user_profile = profile
         order.save()
 
         # Save the user's info
-        if save_info is True:
+        if save_info:
             profile_data = {
                 'default_phone_number': order.phone_number,
                 'default_country': order.country,
