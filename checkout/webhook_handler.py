@@ -54,7 +54,7 @@ class StripeWH_Handler:
         stripe_charge = stripe.Charge.retrieve(
             intent.latest_charge
         )
-        billing_details = stripe_charge.billing_details # updated
+        billing_details = stripe_charge.billing_details
         shipping_details = intent.shipping
         grand_total = round(stripe_charge.amount / 100, 2) # updated
 
@@ -68,7 +68,7 @@ class StripeWH_Handler:
         username = intent.metadata.username
         if username != 'AnonymousUser':
             profile = UserProfile.objects.get(user__username=username)
-            if save_info:
+            if save_info == "true":
                 profile.default_phone_number = shipping_details.phone
                 profile.default_country = shipping_details.address.country
                 profile.default_postcode = shipping_details.address.postal_code
@@ -106,6 +106,7 @@ class StripeWH_Handler:
                 time.sleep(1)
         if order_exists:
             self._send_confirmation_email(order)  # Call to send email
+
             return HttpResponse(
                 content=(f'Webhook received: {event["type"]} | '
                          f'SUCCESS: Verified order already in database'),
@@ -123,7 +124,6 @@ class StripeWH_Handler:
                     postcode=shipping_details.address.postal_code,
                     town_or_city=shipping_details.address.city,
                     street_address1=shipping_details.address.line1,
-                    street_address2=shipping_details.address.line2,
                     county=shipping_details.address.state,
                     original_bag=bag,
                     stripe_pid=pid,
@@ -143,6 +143,7 @@ class StripeWH_Handler:
                 return HttpResponse(
                     content=f'Webhook received: {event["type"]} | ERROR: {e}',
                     status=500)
+                
         self._send_confirmation_email(order)  # Call to send email for new order
         return HttpResponse(
             content=(f'Webhook received: {event["type"]} | '
