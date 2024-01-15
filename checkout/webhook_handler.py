@@ -101,6 +101,7 @@ class StripeWH_Handler:
                 attempt += 1
                 time.sleep(1)
         if order_exists:
+            self._send_confirmation_email(order)  # Call to send email
             return HttpResponse(
                 content=(f'Webhook received: {event["type"]} | '
                          f'SUCCESS: Verified order already in database'),
@@ -132,6 +133,7 @@ class StripeWH_Handler:
                             quantity=item_data,
                         )
                         order_line_item.save()
+                self._send_confirmation_email(order)  # Call to send email for new order
             except Exception as e:
                 if order:
                     order.delete()
