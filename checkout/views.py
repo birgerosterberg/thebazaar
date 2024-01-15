@@ -19,6 +19,13 @@ import json
 
 @require_POST
 def cache_checkout_data(request):
+    """
+    Passes information to the payment intent webhook
+    before the confirm card payment method is called in JS
+    Includes whether user wants to save their data,
+    username and bag contents
+    """
+    # Saves additional metadata to the payment intent
     try:
         pid = request.POST.get('client_secret').split('_secret')[0]
         stripe.api_key = settings.STRIPE_SECRET_KEY
@@ -28,6 +35,8 @@ def cache_checkout_data(request):
             'username': request.user,
         })
         return HttpResponse(status=200)
+
+    # Handles errors
     except Exception as e:
         messages.error(request, 'Sorry, your payment cannot be \
             processed right now. Please try again later.')
@@ -35,6 +44,10 @@ def cache_checkout_data(request):
 
 
 def checkout(request):
+    """
+    Handles the checkout functionality including Stripe payments
+    and creates a new order
+    """
     stripe_public_key = settings.STRIPE_PUBLIC_KEY
     stripe_secret_key = settings.STRIPE_SECRET_KEY
 
@@ -53,22 +66,24 @@ def checkout(request):
             'county': request.POST['county'],
         }
         order_form = OrderForm(form_data)
+        
         if order_form.is_valid():
             order = order_form.save(commit=False)
             pid = request.POST.get('client_secret').split('_secret')[0]
             order.stripe_pid = pid
             order.original_bag = json.dumps(bag)
             order.save()
+            
             for item_id, item_data in bag.items():
                 try:
                     product = Product.objects.get(id=item_id)
-                    if isinstance(item_data, int):
-                        order_line_item = OrderLineItem(
+                    order_line_item = OrderLineItem(
                             order=order,
                             product=product,
                             quantity=item_data,
                         )
-                        order_line_item.save()
+                    order_line_item.save()
+                        
                 except Product.DoesNotExist:
                     messages.error(
                         request, (
@@ -153,7 +168,7 @@ def checkout_success(request, order_number):
         order.save()
 
         # Save the user's info
-        if save_info:
+        if save_info is True:
             profile_data = {
                 'default_phone_number': order.phone_number,
                 'default_country': order.country,
