@@ -54,6 +54,7 @@ def checkout(request):
             'county': request.POST['county'],
         }
         order_form = OrderForm(form_data)
+        
         if order_form.is_valid():
             # Apply voucher if provided
             voucher_code = request.POST.get('voucher_code')
@@ -171,13 +172,13 @@ def checkout_success(request, order_number):
     order = get_object_or_404(Order, order_number=order_number)
 
     if request.user.is_authenticated:
-        profile = UserProfile.objects.get(user=request.user)
+        profile = get_object_or_404(UserProfile, user=request.user)
         # Attach the user's profile to the order
         order.user_profile = profile
         order.save()
 
         # Save the user's info
-        if save_info:
+        if save_info is True:
             profile_data = {
                 'default_phone_number': order.phone_number,
                 'default_country': order.country,
