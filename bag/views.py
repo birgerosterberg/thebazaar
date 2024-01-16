@@ -3,14 +3,21 @@ from django.shortcuts import (
 )
 from django.contrib import messages
 from bazaar.models import Product
+from voucher.forms import VoucherForm
+from voucher.models import Voucher
 
 # Create your views here.
 
 
 def view_bag(request):
     """ A view that renders the bag contents page """
-
-    return render(request, 'bag/bag.html')
+    voucher_form = VoucherForm()
+    
+    context = {
+        'voucher_form': voucher_form,
+    }
+    
+    return render(request, 'bag/bag.html', context)
 
 
 def add_to_bag(request, item_id):

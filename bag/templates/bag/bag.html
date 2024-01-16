@@ -12,7 +12,7 @@
                 <hr>
             </div>
         </div>
-        {% comment %} <!-- Voucher Entry Form -->
+        <!-- Voucher Entry Form -->
         <form action="{% url 'apply_voucher' %}" method="POST" class="form-inline justify-content-end">
             {% csrf_token %}
             <div class="form-group mx-sm-3 mb-2">
@@ -20,7 +20,7 @@
                 <input type="text" id="id_voucher_code" name="voucher_code" class="form-control" placeholder="{{ voucher_form.voucher_code.label }}">
             </div>
             <button type="submit" class="btn btn-black rounded-0">Apply Voucher</button>
-        </form>         {% endcomment %}
+        </form>        
         {% if bag_items %}
         {% for item in bag_items %}
             <div class="row mb-3">
