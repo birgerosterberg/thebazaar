@@ -7,6 +7,7 @@ from .models import Order, OrderLineItem
 from bazaar.models import Product
 from profiles.models import UserProfile
 
+import stripe
 import logging
 import json
 import time
@@ -57,7 +58,7 @@ class StripeWH_Handler:
             logger.debug(f'Payment Intent ID: {pid}')
 
             # Get bag and save_info from payment intent
-            bag = intent.metadata.bag
+            bag = intent.metadata.bag('bag', '{}')
             save_info = intent.metadata.save_info
             logger.debug(f'Metadata bag: {bag}, save_info: {save_info}')
 
