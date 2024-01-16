@@ -58,7 +58,7 @@ class StripeWH_Handler:
             logger.debug(f'Payment Intent ID: {pid}')
 
             # Get bag and save_info from payment intent
-            bag = intent.metadata.bag('bag', '{}')
+            bag = intent.metadata.get('bag', '{}')
             save_info = intent.metadata.save_info
             logger.debug(f'Metadata bag: {bag}, save_info: {save_info}')
 
@@ -181,7 +181,7 @@ class StripeWH_Handler:
             )
 
         except Exception as e:
-            logger.error(f'Unhandled exception in handle_payment_intent_sceeded: {e}', exc_info=True)
+            logger.error(f'Unhandled exception in handle_payment_intent_suceeded: {e}', exc_info=True)
             return HttpResponse(content=f'Webhook received: {event["type"]} | ERROR: {e}', status=500)
 
 
