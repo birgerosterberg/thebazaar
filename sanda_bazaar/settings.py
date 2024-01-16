@@ -241,4 +241,28 @@ else:
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'console': {
+            'class': 'logging.StreamHandler',
+        },
+    },
+    'root': {
+        'handlers': ['console'],
+        'level': 'WARNING',  # Adjust the level as needed
+    },
+    'loggers': {
+        'django': {
+            'handlers': ['console'],
+            'level': 'WARNING',  # Adjust as needed
+            'propagate': False,
+        },
+            'payment_handler': {
+            'handlers': ['console'],
+            'level': 'DEBUG',  # More verbose for this specific module
+            'propagate': False,
+        },
+    },
+}
