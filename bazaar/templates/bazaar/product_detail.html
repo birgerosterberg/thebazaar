@@ -114,6 +114,14 @@
                     <div class="card-body">
                         <h5 class="card-title">{{ review.user.username }}</h5>
                         <p class="card-text">{{ review.review_text }}</p>
+                        <div class="star-rating">
+                            {% for i in 1|upto:6 %}
+                                {% if i <= review.rating %}
+                                    <i class="fas fa-star"></i> <!-- Filled star for each point in rating -->
+                                {% else %}
+                                    <i class="far fa-star"></i> <!-- Empty star for the remaining points -->
+                                {% endif %}
+                            {% endfor %}
                     </div>
                     <div class="card-footer">
                         <small class="text-muted">Reviewed on {{ review.created_at|date:"Y-m-d" }}</small>
