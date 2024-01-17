@@ -133,34 +133,35 @@
         {% endfor %}
     </div>
 </div>
-
-<!-- Review Form -->
-{% if user.is_authenticated and user_can_review %}
-<div class="container mt-4">
-    <h3>Write a Review:</h3>
-    <div class="row justify-content-center">
-        <div class="col-12 col-md-7 col-lg-5"> <!-- Reduced width -->
-            <form method="POST" action="{% url 'product_detail' product.id %}" class="form">
-                {% csrf_token %}
-                <div class="form-group">
-                    <label for="review_text">Your Review</label>
-                    <textarea name="review_text" id="review_text" class="form-control" rows="4" required></textarea> <!-- Adjusted height -->
-                </div>
-                <div class="star-rating">
-                    {% for i in 1|upto:6 %}
-                    <i class="far fa-star rating-star" data-value="{{ i }}"></i>
-                    {% endfor %}
-                    <input type="hidden" name="rating" id="rating" required>
-                </div>
-                <button type="submit" class="btn btn-primary mt-2">Submit Review</button>
-            </form>
-        </div>
-    </div>    
 </div>
-{% endif %}
-{% endblock %}
+<!-- Review Form -->
+    {% if user.is_authenticated and user_can_review %}
+    <div class="container mt-4">
+        <h3>Write a Review:</h3>
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-7 col-lg-5 mb-5 mt-5"> <!-- Reduced width -->
+                <form method="POST" action="{% url 'product_detail' product.id %}" class="form">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <label for="review_text">Your Review</label>
+                        <textarea name="review_text" id="review_text" class="form-control" rows="4" required></textarea> <!-- Adjusted height -->
+                    </div>
+                    <div class="star-rating">
+                        {% for i in 1|upto:6 %}
+                        <i class="far fa-star rating-star" data-value="{{ i }}"></i>
+                        {% endfor %}
+                        <input type="hidden" name="rating" id="rating" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary mt-2">Submit Review</button>
+                </form>
+            </div>
+        </div>    
+    </div>
+    {% endif %}
+{% endblock content %}
 {% block postloadjs %}
     {{ block.super }}
     {% include 'bazaar/includes/qty_in_script.html' %}
     {% include 'bazaar/includes/star_rating.html' %}
-{% endblock %}
+{% endblock postloadjs %}
+

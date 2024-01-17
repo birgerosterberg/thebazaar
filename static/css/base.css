@@ -344,6 +344,13 @@ color: #17a2b8; /* text-info */
   object-fit: cover;
 }
 
+.min-height-100vh {
+  min-height: 80vh;
+}
+.max-card-h {
+  max-width: 300px;
+  margin: 0 auto;
+}
 /* -------------------------------- Media Queries */
 @media (min-width: 1440px) {
   .blog-post-image {
