@@ -53,7 +53,6 @@ INSTALLED_APPS = [
     'profiles',
     'wishlist',
     'review',
-    'voucher',
     'opening_hours',
     'contact',
     'about',
@@ -219,9 +218,9 @@ FREE_DELIVERY_THRESHOLD = 50
 STANDARD_DELIVERY_PERCENTAGE = 10
 STRIPE_CURRENCY = 'usd'
 
-STRIPE_PUBLIC_KEY = os.getenv("STRIPE_PUBLIC_KEY", "")
-STRIPE_SECRET_KEY = os.getenv("STRIPE_SECRET_KEY", "")
-STRIPE_WH_SECRET = os.getenv("STRIPE_WH_SECRET", "")
+STRIPE_PUBLIC_KEY = config('STRIPE_PUBLIC_KEY', default='')
+STRIPE_SECRET_KEY = config('STRIPE_SECRET_KEY', default='')
+STRIPE_WH_SECRET = config('STRIPE_WH_SECRET', default='')
 
 
 if 'DEVELOPMENT' in os.environ:
