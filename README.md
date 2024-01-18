@@ -241,10 +241,82 @@ body {
 ```
 
 ## Business Model
-*Explain project's business model and how it creates value.*
+
+### Value Proposition
+- **Passion-Driven Products**: Offering a curated selection of items that reflect the passions and interests of the Sanda Bazaar team.
+- **Summer Shop Experience**: A serene spot for customers to enjoy coffee and a biscuit, emphasizing relaxation and enjoyment.
+- **Exclusive Second-Hand Market**: A specially selected range of valuable second-hand items, available online at the end of each summer season.
+
+### Customer Segments
+- **Lifestyle Enthusiasts**: Individuals seeking unique, passion-driven products that reflect a love for life and culture.
+- **Relaxation Seekers**: Visitors to the summer shop looking for a peaceful and enjoyable experience.
+- **Collectors and Treasure Hunters**: Customers interested in exclusive, valuable second-hand items.
+
+### Channels
+- **E-commerce Platform and Physical Store**: Both online and physical presence for a comprehensive shopping experience.
+- **Social Media and Digital Marketing**: Utilizing digital platforms to connect with customers and promote products and experiences.
+- **Email Newsletters**: Regular updates on new collections, summer shop highlights, and second-hand market deals.
+
+### Customer Relationships
+- **Personalized Engagement**: Creating a welcoming atmosphere both online and at the summer shop, with a focus on customer enjoyment and satisfaction.
+- **Exclusive Offers**: Providing access to special items and experiences for loyal customers.
+
+### Revenue Streams
+- **Diverse Product Sales**: Income from the sale of a wide range of products that the team loves.
+- **Summer Shop Sales**: Revenue generated from the sale of refreshments and snacks at the summer shop.
+- **Second-Hand Market**: Earnings from the sale of exclusive second-hand items at spot during summer and an online end of the summer sale.
+
+### Key Activities
+- **Product and Experience Curation**: Handpicking products and creating enjoyable experiences that align with the team's passions.
+- **Customer Experience Management**: Ensuring a high-quality, enjoyable experience both online and at the summer shop.
+- **Second-Hand Market Management**: Selecting and preparing valuable items for the end-of-season online sale.
+
+### Key Resources
+- **Unique Product Inventory**: A selection of products that reflects the team's interests and passions.
+- **Summer Shop Setup**: A well-maintained and inviting space for the summer shop.
+- **E-commerce Platform**: A robust online platform to facilitate e-commerce and second-hand end of summer sales.
+
+### Key Partnerships
+- **Product Suppliers**: Partnerships with suppliers who provide unique and interesting products.
+- **Local Artisans and Vendors**: Collaborations with local artisans for exclusive items.
+
+### Cost Structure
+- **Inventory and Purchasing**: Costs related to acquiring and maintaining a diverse product range.
+- **Shop Operation**: Expenses for running the summer shop, including supplies and staffing.
+- **Marketing and Promotion**: Investment in marketing activities to attract and retain customers.
+
+This business model encapsulates Sanda Bazaar's dedication to selling products we love, offering a peaceful summer shop experience, and providing an exclusive online second-hand end of summer market.
 
 ## Marketing
-*Describe any marketing strategies or plans associated with my project.*
+
+### Overview
+Our marketing strategy is designed to leverage both digital and local platforms, focusing on building a strong social media presence and engaging with the community, while planning for future expansion in advertising.
+
+### Social Media Presence
+- **Facebook and Instagram**: These platforms will be the primary focus for our digital marketing efforts. We'll use them to showcase our products, share stories about our summer shop, and engage with our community.
+  - Regular posts featuring new products, behind-the-scenes content, and summer shop highlights.
+  - Interactive campaigns to encourage user engagement and sharing.
+  - Utilizing Instagram stories and reels to create dynamic and engaging content.
+
+### Email Newsletters
+- A regular newsletter to keep subscribers informed about new products, special events at the summer shop, and exclusive offers.
+- Encouraging website visitors and summer shop customers to subscribe for the latest updates and deals.
+
+### Local Community Engagement
+- Participating in local Facebook groups to connect with the community and promote our products and summer shop.
+- Engaging with local customers and visitors through community events and collaborations.
+
+### Future Advertising Plans
+- **DestinationGotland Ferry TV Screens**: Once the summer shop is operating successfully, we plan to run ads on the TV screens aboard the DestinationGotland ferry.
+  - These ads will target tourists and locals traveling to and from Gotland, introducing them to Sanda Bazaar and inviting them to visit our summer shop.
+
+### Measurable Goals
+- Track engagement and conversion rates from social media campaigns.
+- Monitor growth in newsletter subscriptions and engagement levels.
+- Assess the impact of local community engagement on summer shop foot traffic and sales.
+- Evaluate the effectiveness of TV screen advertising once implemented.
+
+This marketing strategy is designed to build Sanda Bazaar's brand awareness and customer base, leveraging the power of social media, community engagement, and targeted advertising to attract and retain customers.
 
 ## Agile Methodology
 *Discuss how Agile methodology was implemented in my project.*
