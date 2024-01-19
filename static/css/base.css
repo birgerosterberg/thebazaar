@@ -347,14 +347,6 @@ color: #17a2b8; /* text-info */
 .min-height-100vh {
   min-height: 80vh;
 }
-.max-card-hm {
-  max-width: 300px;
-  margin: 0 auto;
-}
-.max-card-h {
-  max-width: 600px;
-  margin: 0 auto;
-}
 
 #mc_embed_signup {
   background: #a8742f;
@@ -362,8 +354,27 @@ color: #17a2b8; /* text-info */
   font: 14px Helvetica, Arial, sans-serif;
   width: 320px;
 }
-
 /* -------------------------------- Media Queries */
+
+/* Styles for mobile screens */
+@media (max-width: 768px) {
+  .max-size-card {
+      max-width: 300px; /* Maximum width for mobile */
+      min-height: 425px;
+      max-height: 425px;
+      margin: 0 auto;
+  }
+}
+
+/* Styles for desktop screens */
+@media (min-width: 769px) {
+  .max-size-card {
+      max-width: 600px; /* Maximum width for desktop */
+      min-height: 800px;
+      max-height: 800px;
+      margin: 0 auto;
+  }
+}
 @media (min-width: 1440px) {
   .blog-post-image {
     max-height: 500px;
