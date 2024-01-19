@@ -33,6 +33,7 @@ urlpatterns = [
     path('about/', include('about.urls')),
     path('summernote/', include('django_summernote.urls')),
     path('blog/', include('blog.urls')),
+    path('faq/', include('faq.urls')),
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 

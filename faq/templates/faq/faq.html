@@ -1,0 +1,157 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container mt-4 w-50 min-height-100vh text-center">
+    <div class="my-5"></div> <!-- Spacer -->
+    <img src="{{ MEDIA_URL }}biglogo50.webp" alt="big logo in home" class="shadow-break mx-auto d-block img-fluid">
+    <h1 class="py-5">Frequently Asked Questions</h1>
+
+    <div id="faqAccordion" class="py-5">
+
+        <!-- FAQ 1 -->
+        <div class="card">
+            <div class="card-header bg-sanddark">
+                <h2 class="mb-0">
+                    <button class="btn btn-link collapsed text-black font-size-text" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                        Do you deliver outside of Sweden?
+                    </button>
+                </h2>
+            </div>
+            <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#faqAccordion">
+                <div class="card-body font-size-text-md bg-sandlight">
+                    Yes, we deliver outside Sweden. Please contact us for the shipping price, as it needs to be calculated based on your location and our logistics.
+                </div>
+            </div>
+        </div>
+
+        <!-- FAQ 2 -->
+        <div class="card">
+            <div class="card-header bg-sanddark">
+                <h2 class="mb-0">
+                    <button class="btn btn-link collapsed text-black font-size-text" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        What is your shipping policy?
+                    </button>
+                </h2>
+            </div>
+            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#faqAccordion">
+                <div class="card-body font-size-text-md bg-sandlight">
+                    Orders over $50 qualify for free shipping. For orders under this amount, a shipping fee will be added, visible in your shopping bag at checkout.
+                </div>
+            </div>
+        </div>
+
+        <!-- FAQ 3 -->
+        <div class="card">
+            <div class="card-header bg-sanddark">
+                <h2 class="mb-0">
+                    <button class="btn btn-link collapsed text-black font-size-text" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                        Can I return products?
+                    </button>
+                </h2>
+            </div>
+            <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#faqAccordion">
+                <div class="card-body font-size-text-md bg-sandlight">
+                    Yes, you can return products. However, please note that this does not apply to our Pre-Loved items. We offer insurance against transit damage for these items.
+                </div>
+            </div>
+        </div>
+
+        <!-- FAQ 4 -->
+        <div class="card">
+            <div class="card-header bg-sanddark">
+                <h2 class="mb-0">
+                    <button class="btn btn-link collapsed text-black font-size-text" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                        How can I contact you?
+                    </button>
+                </h2>
+            </div>
+            <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#faqAccordion">
+                <div class="card-body font-size-text-md bg-sandlight">
+                    You can find our contact information on our <a href="{% url 'contact' %}">Contacts page</a>.
+                </div>
+            </div>
+        </div>
+
+        <!-- FAQ 5 -->
+        <div class="card">
+            <div class="card-header bg-sanddark">
+                <h2 class="mb-0">
+                    <button class="btn btn-link collapsed text-black font-size-text" type="button" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                        How do I get to your summer shop?
+                    </button>
+                </h2>
+            </div>
+            <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#faqAccordion">
+                <div class="card-body font-size-text-md bg-sandlight">
+                    If you are on Gotland, you can visit us at [address]. Otherwise, you can reach us by flight or ferry via <a href="https://www.destinationgotland.se">Destination Gotland</a>.
+                </div>
+            </div>
+        </div>
+
+        <!-- FAQ 6 -->
+        <div class="card">
+            <div class="card-header bg-sanddark">
+                <h2 class="mb-0">
+                    <button class="btn btn-link collapsed text-black font-size-text" type="button" data-toggle="collapse" data-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                        What kind of products do we sell?
+                    </button>
+                </h2>
+            </div>
+            <div id="collapseSix" class="collapse" aria-labelledby="headingSix" data-parent="#faqAccordion">
+                <div class="card-body font-size-text-md bg-sandlight">
+                    Our product range is diverse, but it primarily includes items that we personally love and use. Our philosophy centers around offering products that resonate with our own tastes and preferences.
+                </div>
+            </div>
+        </div>
+
+        <!-- FAQ 7 -->
+        <div class="card">
+            <div class="card-header bg-sanddark">
+                <h2 class="mb-0">
+                    <button class="btn btn-link collapsed text-black font-size-text" type="button" data-toggle="collapse" data-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
+                        What is Pre-Loved?
+                    </button>
+                </h2>
+            </div>
+            <div id="collapseSeven" class="collapse" aria-labelledby="headingSeven" data-parent="#faqAccordion">
+                <div class="card-body font-size-text-md bg-sandlight">
+                    Pre-Loved items are previously owned products that have found their way to us. We resell these items in our shop because we adore them but cannot use them ourselves.
+                </div>
+            </div>
+        </div>
+
+        <!-- FAQ 8 -->
+        <div class="card">
+            <div class="card-header bg-sanddark">
+                <h2 class="mb-0">
+                    <button class="btn btn-link collapsed text-black font-size-text" type="button" data-toggle="collapse" data-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
+                        Why can I only see new Pre-Loved items online at the end of the summer season?
+                    </button>
+                </h2>
+            </div>
+            <div id="collapseEight" class="collapse" aria-labelledby="headingEight" data-parent="#faqAccordion">
+                <div class="card-body font-size-text-md bg-sandlight">
+                    We prioritize our visiting customers and locals by offering them the first choice. This approach adds value and enhances the customer experience. However, if you spot an item you like on our social media, we can certainly arrange for you to purchase it. Nothing is impossible!
+                </div>
+            </div>
+        </div>
+
+        <!-- FAQ 9 -->
+        <div class="card">
+            <div class="card-header bg-sanddark">
+                <h2 class="mb-0">
+                    <button class="btn btn-link collapsed text-black font-size-text" type="button" data-toggle="collapse" data-target="#collapseNine" aria-expanded="false" aria-controls="collapseNine">
+                        Do you create custom malas?
+                    </button>
+                </h2>
+            </div>
+            <div id="collapseNine" class="collapse" aria-labelledby="headingNine" data-parent="#faqAccordion">
+                <div class="card-body font-size-text-md bg-sandlight">
+                    We are not currently offering custom malas, but this is something we plan to do in the future. Please feel free to email us with your requirements, and we will see what we can do. As always, we believe nothing is impossible!
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+{% endblock %}

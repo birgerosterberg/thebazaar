@@ -17,15 +17,21 @@
                 <a href="{% url 'bazaar' %}?category=Instruments" class="dropdown-item">Instruments</a>
                 <a href="{% url 'bazaar' %}?category=Soap" class="dropdown-item">Soaps</a>
                 <a href="{% url 'bazaar' %}?category=Candle" class="dropdown-item">Candles</a>
+                <a href="{% url 'bazaar' %}?category=Beautifying" class="dropdown-item">Beautifying</a>
+                <a href="{% url 'bazaar' %}?category=Pre-Loved" class="dropdown-item">Pre-Loved</a>
             </div>
         </li>
         <!-- Blog Section -->
         <li class="nav-item">
-            <a class="logo-font font-weight-bold nav-link text-black" href="{% url 'blog_index' %}" id="contact-link">Blog</a>
+            <a class="logo-font font-weight-bold nav-link text-black" href="{% url 'blog_index' %}" id="blog-link">Blog</a>
         </li>
         <!-- Contact Section -->
         <li class="nav-item">
             <a class="logo-font font-weight-bold nav-link text-black" href="{% url 'contact' %}" id="contact-link">Contact</a>
+        </li>
+        <!-- Contact Section -->
+        <li class="nav-item">
+            <a class="logo-font font-weight-bold nav-link text-black" href="{% url 'faq' %}" id="faq-link">FAQ</a>
         </li>
     </ul>
 </div>
