@@ -347,8 +347,12 @@ color: #17a2b8; /* text-info */
 .min-height-100vh {
   min-height: 80vh;
 }
-.max-card-h {
+.max-card-hm {
   max-width: 300px;
+  margin: 0 auto;
+}
+.max-card-h {
+  max-width: 600px;
   margin: 0 auto;
 }
 

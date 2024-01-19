@@ -5,7 +5,7 @@ from blog.models import BlogPost
 
 
 def index(request):
-    products = Product.objects.all().order_by('-rating')[:12]
+    products = Product.objects.all().order_by('?')[:20]
     today_hours = get_todays_hours()
     weekly_hours = get_weekly_hours()
     latest_post = BlogPost.objects.all().order_by('-published_date').first()
