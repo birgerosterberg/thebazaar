@@ -60,7 +60,7 @@
                 <div class="row justify-content-center">
                     <div class="col-12">
                         <div class="card h-100 border-0 max-size-card">
-                            <a href="{% url 'product_detail' product.id %}" class="text-decoration-none text-reset">
+                            <a href="{% url 'product_detail' product.id %}" class=" text-reset">
                                 {% if product.image_url %}
                                     <img class="card-img-top card-img-top-carousel img-fluid" src="{{ product.image_url }}" alt="{{ product.name }}">
                                 {% elif product.image %}
@@ -68,8 +68,9 @@
                                 {% else %}
                                     <img class="card-img-top card-img-top-carousel img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
                                 {% endif %}
+                            </a>
                                 <div class="card-body pb-0">
-                                    <p class="mb-0">{{ product.name }}</p>
+                                    <p class="mb-0 text-decoration-none font-size-text"><a href="{% url 'product_detail' product.id %}" class="text-black">{{ product.name }}</a></p>
                                 </div>
                                 <div class="card-footer bg-white pt-0 border-0 text-left">
                                     <div class="row">
@@ -90,7 +91,6 @@
                                         </div>
                                     </div>
                                 </div>
-                            </a>
                         </div>
                     </div>
                 </div>

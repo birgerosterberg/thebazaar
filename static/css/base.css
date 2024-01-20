@@ -283,10 +283,7 @@ color: #17a2b8; /* text-info */
   height: 300px; /* Fixed height for images */
   object-fit: cover;
 }
-.card-body-carousel {
-  overflow: hidden; /* Hide text that overflows the card body */
-  text-overflow: ellipsis; /* Adds an ellipsis to text that overflows */
-}
+
 .carousel-control-prev-icon,
 .carousel-control-next-icon {
     background-size: 60%;
@@ -320,19 +317,7 @@ color: #17a2b8; /* text-info */
   box-shadow: 
   5px 0 100px rgba(255, 243, 224, 0.8),   /* right shadow */
   -5px 0 100px rgba(255, 243, 224, 0.8),  /* left shadow */
-  0 5px 100px rgba(255, 243, 224, 0.8);   /* bottom shadow */}
-
-.amazing-background {
-  --s: 60px; /* control the size */
-  
-  --_g: #fff3e0 83%,#a8742f 85% 99%,##fff3e0 101%;
-  background:
-    radial-gradient(27% 29% at right ,var(--_g)) calc(var(--s)/ 2) var(--s),
-    radial-gradient(27% 29% at left  ,var(--_g)) calc(var(--s)/-2) var(--s),
-    radial-gradient(29% 27% at top   ,var(--_g)) 0 calc(var(--s)/ 2),
-    radial-gradient(29% 27% at bottom,var(--_g)) 0 calc(var(--s)/-2)
-    #fff3e0;
-  background-size: calc(2*var(--s)) calc(2*var(--s));
+  0 5px 100px rgba(255, 243, 224, 0.8);   /* bottom shadow */
 }
 
 .blog-post-image {
@@ -348,7 +333,7 @@ color: #17a2b8; /* text-info */
   background: #a8742f;
   clear: left;
   font: 14px 'Eczar', serif;
-  width: 320px;
+  width: 300px;
 }
 /* -------------------------------- Media Queries */
 
@@ -356,8 +341,8 @@ color: #17a2b8; /* text-info */
 @media (max-width: 768px) {
   .max-size-card {
       max-width: 300px; /* Maximum width for mobile */
-      min-height: 425px;
-      max-height: 425px;
+      min-height: 450px;
+      max-height: 450px;
       margin: 0 auto;
   }
   .card-img-top-carousel {
@@ -370,15 +355,17 @@ color: #17a2b8; /* text-info */
 /* Styles for desktop screens */
 @media (min-width: 769px) {
   .max-size-card {
-      max-width: 600px; /* Maximum width for desktop */
-      min-height: 800px;
-      max-height: 800px;
+      max-width: 500px; /* Maximum width for desktop */
+      min-height: 600px;
+      max-height: 600px;
       margin: 0 auto;
+      object-fit: cover;
+
   }
   .card-img-top-carousel {
     object-fit: cover;
-    min-height: 600px;
-    max-height: 600px;
+    min-height: 400px;
+    max-height: 400px;
   }
 }
 @media (min-width: 1440px) {

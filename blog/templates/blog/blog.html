@@ -18,9 +18,9 @@
                     {% endif %}
                     <div class="card-body">
                         <h2 class="card-title">{{ post.title }}</h2>
-                        <p class="card-text font-size-text">{{ post.content|safe }}</p>
+                        <div class="card-text font-size-text">{{ post.content|safe }}</div>
                         <hr>
-                        <p class="text-muted"><strong>Published on {{ post.published_date|date:"F j, Y" }}</strong></p> 
+                        <div class="text-muted font-size-text-md">Published on {{ post.published_date|date:"F j, Y" }}</div> 
                         <!-- Additional details can be added here -->
                     </div>
                 </div>
