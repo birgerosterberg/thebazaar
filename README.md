@@ -178,7 +178,6 @@ Develop a user-friendly online shopping experience for Sanda Bazaar, catering to
 
 [Back to top ⇧](#overview)
 
-
 ## Structure
 
 The structure of Sanda Bazaar's website is designed to cater to different user types, with content varying based on authentication and whether the user is a client or an admin.
@@ -411,12 +410,132 @@ This content strategy aims to strengthen Sanda Bazaar's online presence, with a 
 [Back to top ⇧](#overview)
 
 ## Agile Methodology
-*Discuss how Agile methodology was implemented in my project.*
+
+As a solo student embarking on this project, I've embraced a practical Agile approach to reach a Minimum Viable Product (MVP). This journey involved seven sprints, with the final, 7th sprint dedicated primarily to testing and bug fixing. This strategic focus ensures ample time to refine the project and guarantee its functionality.
+
+While I recognize that my real-world project demands extensive work, I've deliberately kept this endeavor project-focused. This allows for a structured development process that can evolve as the project progresses.
+
+I have established a Kanban board, organizing user stories and tasks in a sequential order of completion. This structure not only helps me track my progress but also ensures that I adhere to my original vision. Each task and EPIC added to the board reflects my commitment to fulfilling the foundational user stories and the overarching EPICs outlined in this README.
+
+The goal has always been to achieve an MVP for this project. However, I'm aware that transitioning to an actual store launch entails much more development. This project will continue to evolve in a separate fork, highlighting the journey from MVP to a fully-fledged product launch.
+
+Working in an Agile manner has taught me the importance of foresight and planning. Historically, planning wasn't my forte, but through development, I've learned its value. The Agile framework has been instrumental in preventing last-minute rushes and overwhelming workloads. I'm continuously exploring new Agile tools to enhance my planning process, making it more fluid and effective.
+
+This learning journey in Agile methodology underscores the power of structured planning in software development. It's a journey of continuous improvement, learning, and adaptation.
+
+
+[My Kanban Board](https://github.com/users/birgerosterberg/projects/4/)
+
+
 [Back to top ⇧](#overview)
 
 ## Features
-*List down and explain the features of my project.*
+<details>
+<summary style="font-size: larger;">Navbar Desktop and Mobile</summary>
+
+- **Large & XL Screens:**
+  - Always-visible search box for product searches by name and description.
+  - Account Menu with links varying by login status and admin rights, including sign-in, profile, and site management.
+  - Shopping bag icon displaying current bag contents and total value, with dynamic styling based on contents.
+  - Home page and products dropdown links, including category-specific views.
+
+- **Medium & Smaller Screens:**
+  - Dropdown burger icon for compact navigation.
+  - Links to home, products, and more, similar to larger screens.
+  - Search icon triggering a dropdown search bar.
+  - Account and shopping bag features similar to larger screens.
+
+- **My Account Link Variations:**
+  - Different types of links are available depending on the user's status:
+    - Admin users get access to advanced site management options.
+    - Logged-in users see personalized account options.
+    - Not logged-in users are presented with options to sign-in or register.
+
+  <details>
+  <summary>Images Desktop Navbar</summary>
+
+  ![Navbar Account Bag Desktop](readme/navbar-feat/navbar-acc-bag-d.png)
+  ![Navbar Account Dropdown Desktop](readme/navbar-feat/navbar-acc-dropdown-d.png)
+  ![Navbar Dropdown Desktop](readme/navbar-feat/navbar-dropdown-d.png)
+  ![Navbar Links Desktop](readme/navbar-feat/navbar-links-d.png)
+  ![Navbar Logo Desktop](readme/navbar-feat/navbar-logo-d.png)
+  ![Navbar Search Desktop](readme/navbar-feat/navbar-search-d.png)
+  ![Navbar Logged in User](readme/navbar-feat/logged-in-user.png)
+  ![Navbar Not Logged in](readme/navbar-feat/not-loggedin.png)
+  </details>
+
+  <details>
+  <summary>Images Mobile Navbar</summary>
+
+  ![Navbar Account Bag Mobile](readme/navbar-feat/navbar-acc-drop-m.png)
+  ![Navbar Hamburger Links Mobile](readme/navbar-feat/navbar-ham-links-m.png)
+  ![Navbar Hamburger Links Search Mobile](readme/navbar-feat/navbar-ham-links-search-m.png)
+
+  </details>
+</details>
+
+<details>
+<summary style="font-size: larger;">Open Times</summary>
+
+- **Dynamic Display:**
+  - Automatically checks the current day and displays corresponding open times.
+  - If the shop is closed on a particular day, it shows "We're closed today."
+  - Used for displaying weekly open times on both the Home and Contact pages.
+
+- **Admin Panel Management:**
+  - Open times for each day can be easily set and updated from the admin panel.
+  - Eliminates the need for manual HTML changes, ensuring ease of management.
+
+- **Customer Convenience:**
+  - Provides visitors with accurate and up-to-date opening hours.
+  - Particularly useful for local and visiting customers in Gotland, addressing common issues with changing open times.
+  - Enhances the user experience on the Home and Contact pages by providing clear open time information.
+
+- **Responsive Design:**
+  - Seamlessly adapts to different devices, ensuring accessibility for all users.
+
+- **Value to Customers:**
+  - Ensures customers always have the most current information on shop availability.
+  - Enhances user experience by offering clear, instant insights into shop open times.
+
+  <details>
+  <summary>Images Open Times</summary>
+
+  ![Daily Open Time](readme/open/opentime.png)
+  ![Weekly Open Time](readme/open/weekopen.png)
+  ![Open time Admin](readme/open/openadmin.png)
+
+  </details>
+</details>
+
+<details>
+<summary style="font-size: larger;">Blog Functionality</summary>
+
+- **Homepage Sneak Peek:**
+  - Features a snippet and link to the latest blog post, designed to pique visitor interest.
+
+- **Blog Page:**
+  - Displays an image along with the full text of each blog post.
+
+- **Admin Management with Summernote for Django:**
+  - The blog post editor uses Summernote, a rich text editor for Django, enhancing the content creation experience.
+  - Provides an easy-to-use interface for creating and editing blog posts.
+  - Offers an overview of all blog posts and simplifies the process of adding new blog posts.
+  <details>
+  <summary>Blog images</summary>
+  
+  ![Blog snippet homepage](<readme/blog/home blogpost.png>)
+  ![Blog page view](readme/blog/blog-page.png)
+  ![Blog admin overview](readme/blog/overview-blog-a.png)
+  ![Blog post view](readme/blog/admin-blogpost.png)
+ 
+  </details>
+</details>
+
+
 [Back to top ⇧](#overview)
+
+---
 
 ## Database
 
@@ -523,7 +642,8 @@ This content strategy aims to strengthen Sanda Bazaar's online presence, with a 
 ![Database Model DrawSQL](readme/drawSQL-sanda-bazaar.png)
 
 ## Responsive Layout and Design
-*Describe how my project is responsive and its design aspects.*
+[Link to separate testing readme](/TESTING.md)
+
 [Back to top ⇧](#overview)
 
 
@@ -533,7 +653,8 @@ This content strategy aims to strengthen Sanda Bazaar's online presence, with a 
 
 
 ## Testing
-*Detail the testing processes and test results for my project.*
+[Link to separate testing readme](/TESTING.md)
+
 [Back to top ⇧](#overview)
 
 
