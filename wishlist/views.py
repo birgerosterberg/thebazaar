@@ -1,4 +1,3 @@
-
 from django.shortcuts import get_object_or_404, redirect, render
 from django.contrib.auth.decorators import login_required
 from bazaar.models import Product
@@ -11,6 +10,7 @@ def add_to_wishlist(request, product_id):
     wishlist, created = Wishlist.objects.get_or_create(user=request.user)
     wishlist.products.add(product)
     return redirect('mywishlist')  # Redirect as appropriate
+
 
 @login_required
 def remove_from_wishlist(request, product_id):
@@ -28,4 +28,5 @@ def wishlist_view(request):
     except Wishlist.DoesNotExist:
         products = []
 
-    return render(request, 'wishlist/wishlist_page.html', {'products': products})
+    return render(request, 'wishlist/wishlist_page.html',
+                  {'products': products})

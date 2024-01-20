@@ -23,7 +23,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ.get('SECRET_KEY','secret?_key?')
+SECRET_KEY = os.environ.get('SECRET_KEY', 'DEVELOPMENT_SECRET')
+
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
@@ -148,7 +149,7 @@ else:
 
 AUTH_PASSWORD_VALIDATORS = [
     {
-        'NAME': 
+        'NAME':
             'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
     },
     {
@@ -259,7 +260,7 @@ LOGGING = {
             'level': 'WARNING',  # Adjust as needed
             'propagate': False,
         },
-            'payment_handler': {
+        'payment_handler': {
             'handlers': ['console'],
             'level': 'DEBUG',  # More verbose for this specific module
             'propagate': False,

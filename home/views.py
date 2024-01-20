@@ -10,7 +10,6 @@ def index(request):
     weekly_hours = get_weekly_hours()
     latest_post = BlogPost.objects.all().order_by('-published_date').first()
 
-
     context = {
         'products': products,
         'today_hours': today_hours,

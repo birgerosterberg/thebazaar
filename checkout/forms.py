@@ -39,4 +39,3 @@ class OrderForm(forms.ModelForm):
             self.fields[field].label = False
         # Add the 'py-2' class to the 'country' field's widget
         self.fields['country'].widget.attrs['class'] += ' py-2'
-

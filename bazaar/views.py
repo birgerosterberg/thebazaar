@@ -67,18 +67,27 @@ def bazaar(request):
 
 
 def product_detail(request, product_id):
-    """ A view to show individual product details and handle review submissions. """
+    """ A view to show individual product
+    details and handle review submissions. """
     product = get_object_or_404(Product, pk=product_id)
     user_can_review = False
-    reviews = Review.objects.filter(product=product)  # Get reviews for the product
+    # Get reviews for the product
+    reviews = Review.objects.filter(product=product)
 
     if request.user.is_authenticated:
         user_can_review = user_can_review_product(request.user, product)
         if request.method == 'POST' and user_can_review:
             review_text = request.POST.get('review_text')
-            rating = int(request.POST.get('rating'))  # Retrieve rating from form
-            Review.objects.create(product=product, user=request.user, review_text=review_text, rating=rating)
-            update_product_rating(product)  # Update the average product rating
+            # Retrieve rating from form
+            rating = int(request.POST.get('rating'))
+            Review.objects.create(
+                product=product,
+                user=request.user,
+                review_text=review_text,
+                rating=rating
+                )
+            # Update the average product rating
+            update_product_rating(product)
             return redirect('product_detail', product_id=product.id)
 
     context = {
