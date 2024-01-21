@@ -3,9 +3,7 @@
 
 {% block content %}
 <div class="container text-center">
-    <div class="my-5"></div> <!-- Spacer -->
-        <img src="{{ MEDIA_URL }}biglogo50.webp" alt="big logo in home" class="shadow-break mx-auto d-block img-fluid">
-    <div class="my-5 py-5"></div> <!-- Spacer -->
+        <img src="{{ MEDIA_URL }}biglogo50.webp" alt="big logo in home" class="shadow-break mx-auto d-block img-fluid py-5">
     <div class="row py-4 intro-text-section">
         <div class="col-lg-10 mx-auto ">
             <!-- Grouped Heading and Subheading -->
@@ -59,7 +57,7 @@
             <div class="carousel-item {% if forloop.first %}active{% endif %}">
                 <div class="row justify-content-center">
                     <div class="col-12">
-                        <div class="card h-100 border-0 max-size-card">
+                        <div class="card border-1 max-size-card">
                             <a href="{% url 'product_detail' product.id %}" class=" text-reset">
                                 {% if product.image_url %}
                                     <img class="card-img-top card-img-top-carousel img-fluid" src="{{ product.image_url }}" alt="{{ product.name }}">
@@ -70,7 +68,7 @@
                                 {% endif %}
                             </a>
                                 <div class="card-body pb-0">
-                                    <h3 class="mb-0 text-decoration-none font-size-text"><a href="{% url 'product_detail' product.id %}" class="text-black">{{ product.name }}</a></h3>
+                                    <h3 class="mb-0 text-decoration-none font-size-text-md"><a href="{% url 'product_detail' product.id %}" class="text-black cardousel-product">{{ product.name }}</a></h3>
                                 </div>
                                 <div class="card-footer bg-white pt-0 border-0 text-left">
                                     <div class="row">

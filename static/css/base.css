@@ -286,8 +286,12 @@ color: #17a2b8; /* text-info */
 
 .card-img-top-carousel {
   width: 100%;
-  height: 300px; /* Fixed height for images */
+  height: 380px; /* Fixed height for images */
   object-fit: cover;
+}
+
+.cardousel-product {
+  overflow: hidden;
 }
 
 .carousel-control-prev-icon,
@@ -307,7 +311,7 @@ color: #17a2b8; /* text-info */
   -webkit-mask: var(--mask);
           mask: var(--mask);
   background-color: #fff3e0; /* Fallback background color */
-  background-image: url('/static/images/epwaemt1.webp'); /* Middle Eastern pattern */
+  background-image: url('/static/images/epwaemt5.webp'); /* Middle Eastern pattern */
   background-repeat: repeat; /* Tile the background image */
   padding: 20px; /* Some padding around the text */
 }
@@ -352,13 +356,13 @@ color: #17a2b8; /* text-info */
 @media (max-width: 768px) {
   .max-size-card {
       max-width: 300px; /* Maximum width for mobile */
-      min-height: 450px;
-      max-height: 450px;
+      max-height: 435px; 
       margin: 0 auto;
+      overflow: hidden;
+
   }
   .card-img-top-carousel {
     object-fit: cover;
-    min-height: 300px;
     max-height: 300px;
   }
 }
@@ -366,17 +370,14 @@ color: #17a2b8; /* text-info */
 /* Styles for desktop screens */
 @media (min-width: 769px) {
   .max-size-card {
-      max-width: 500px; /* Maximum width for desktop */
-      min-height: 600px;
-      max-height: 600px;
+      max-width: 380px; /* Maximum width for desktop */
+      max-height: 515px;
       margin: 0 auto;
-      object-fit: cover;
+      overflow: hidden;
 
   }
   .card-img-top-carousel {
-    object-fit: cover;
-    min-height: 400px;
-    max-height: 400px;
+    max-height: 380px;
   }
 }
 @media (min-width: 1440px) {

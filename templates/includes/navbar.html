@@ -2,36 +2,36 @@
     <ul class="navbar-nav w-auto mx-auto">
       <!-- Home Section -->
       <li class="nav-item">
-        <a class="logo-font font-weight-bold nav-link text-black mr-5" href="{% url 'home' %}" id="home-link">Home</a>
+        <a class="logo-font font-weight-bold nav-link text-black mr-5" href="{% url 'home' %}" id="home-link" aria-label="Link back to the homepage">Home</a>
       </li>
       <!-- About Section -->
       <li class="nav-item">
-        <a class="logo-font font-weight-bold nav-link text-black mr-5" href="{% url 'about' %}" id="about-link">About</a>
+        <a class="logo-font font-weight-bold nav-link text-black mr-5" href="{% url 'about' %}" id="about-link" aria-label="Link to our about page">About</a>
       </li>
       <!-- Bazaar Section with Dropdown -->
       <li class="nav-item dropdown">
         <a class="logo-font font-weight-bold nav-link text-black mr-5 dropdown-toggle" href="#" id="bazaar-link"
            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Bazaar</a>
         <div class="dropdown-menu border-0" aria-labelledby="bazaar-link">
-          <a href="{% url 'bazaar' %}?sort=category&direction=asc" class="dropdown-item">All Products</a>
-          <a href="{% url 'bazaar' %}?category=Instruments" class="dropdown-item">Instruments</a>
-          <a href="{% url 'bazaar' %}?category=Soap" class="dropdown-item">Soaps</a>
-          <a href="{% url 'bazaar' %}?category=Candle" class="dropdown-item">Candles</a>
-          <a href="{% url 'bazaar' %}?category=Beautifying" class="dropdown-item">Beautifying</a>
-          <a href="{% url 'bazaar' %}?category=Pre-Loved" class="dropdown-item">Pre-Loved</a>
+          <a href="{% url 'bazaar' %}?sort=category&direction=asc" class="dropdown-item" aria-label="List all our products">All Products</a>
+          <a href="{% url 'bazaar' %}?category=Instruments" class="dropdown-item" aria-label="List all our instruments">Instruments</a>
+          <a href="{% url 'bazaar' %}?category=Soap" class="dropdown-item" aria-label="List all our soaps">Soaps</a>
+          <a href="{% url 'bazaar' %}?category=Candle" class="dropdown-item" aria-label="List all our candles">Candles</a>
+          <a href="{% url 'bazaar' %}?category=Beautifying" class="dropdown-item" aria-label="List all our beautifying products">Beautifying</a>
+          <a href="{% url 'bazaar' %}?category=Pre-Loved" class="dropdown-item" aria-label="List all our pre-loved(secondhand) products">Pre-Loved</a>
         </div>
       </li>
       <!-- Blog Section -->
       <li class="nav-item">
-        <a class="logo-font font-weight-bold nav-link text-black" href="{% url 'blog_index' %}" id="blog-link">Blog</a>
+        <a class="logo-font font-weight-bold nav-link text-black" href="{% url 'blog_index' %}" id="blog-link" aria-label="Link to our blog">Blog</a>
       </li>
       <!-- Contact Section -->
       <li class="nav-item">
-        <a class="logo-font font-weight-bold nav-link text-black" href="{% url 'contact' %}" id="contact-link">Contact</a>
+        <a class="logo-font font-weight-bold nav-link text-black" href="{% url 'contact' %}" id="contact-link" aria-label="Contact us page">Contact</a>
       </li>
       <!-- FAQ Section -->
       <li class="nav-item">
-        <a class="logo-font font-weight-bold nav-link text-black" href="{% url 'faq' %}" id="faq-link">FAQ</a>
+        <a class="logo-font font-weight-bold nav-link text-black" href="{% url 'faq' %}" id="faq-link" aria-label="Frequently asked questions page FAQs">FAQ</a>
       </li>
     </ul>
 </div>

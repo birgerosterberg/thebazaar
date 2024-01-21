@@ -9,7 +9,7 @@
 <h2 class="logo-font mb-4">{% trans "Sign Up" %}</h2>
 <hr>
 
-<p>{% blocktrans %}Already have an account? Then please <a href="{{ login_url }}">sign in</a>.{% endblocktrans %}</p>
+<p class="text-black">{% blocktrans %}Already have an account? Then please <a href="{{ login_url }}" class="link-dark-blue">sign in</a>.{% endblocktrans %}</p>
 
 <form class="signup min-height-100vh" id="signup_form" method="post" action="{% url 'account_signup' %}">
   {% csrf_token %}
