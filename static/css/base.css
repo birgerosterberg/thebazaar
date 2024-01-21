@@ -336,6 +336,11 @@ color: #17a2b8; /* text-info */
   width: 300px;
 }
 /* -------------------------------- Media Queries */
+@media (min-width: 767px) {
+  #mc_embed_signup{
+    width: 250px;
+  }
+}
 
 /* Styles for mobile screens */
 @media (max-width: 768px) {

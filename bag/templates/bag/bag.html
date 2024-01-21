@@ -30,7 +30,7 @@
                         <div class="row">
                             <div class="col-12 mt-2 text-center text-md-left">
                                 <p><strong>{{ item.product.name }}</strong></p>
-                                <p class="small text-muted">SKU: {{ item.product.sku|upper }}</p>
+                                <p class="small text-black">SKU: {{ item.product.sku|upper }}</p>
                             </div>
                         </div>
 
@@ -40,8 +40,8 @@
                         </div>
 
                         <div class="row">
-                            <div class="col-6 text-center">${{ item.product.price }}</div>
-                            <div class="col-6 text-center">${{ item.product.price | calc_subtotal:item.quantity }}</div>
+                            <div class="col-6 text-center font-size-text-md font-weight-bold">${{ item.product.price }}</div>
+                            <div class="col-6 text-center font-size-text-md font-weight-bold">${{ item.product.price | calc_subtotal:item.quantity }}</div>
                         </div>
 
                         <!-- Quantity Input in a Centered Grid -->
@@ -53,16 +53,16 @@
                                         <div class="input-group-prepend">
                                             <button class="decrement-qty btn btn-sm btn-black rounded-0" 
                                                     data-item_id="{{ item.item_id }}" id="decrement-qty_{{ item.item_id }}">
-                                                <i class="fas fa-minus fa-sm"></i>
+                                                <i class="fas fa-minus fa-sm" aria-label="decrement product quantity button"></i>
                                             </button>
                                         </div>
                                         <input class="form-control qty_input" type="number"
                                                 name="quantity" value="{{ item.quantity }}" min="1" max="99"
                                                 data-item_id="{{ item.item_id }}"
-                                                id="id_qty_{{ item.item_id }}">
+                                                id="id_qty_{{ item.item_id }}" aria-label="product quantity field">
                                         <div class="input-group-append">
                                             <button class="increment-qty btn btn-sm btn-black rounded-0"
-                                                    data-item_id="{{ item.item_id }}" id="increment-qty_{{ item.item_id }}">
+                                                    data-item_id="{{ item.item_id }}" id="increment-qty_{{ item.item_id }}" aria-label="increment product quantity button">
                                                 <i class="fas fa-plus fa-sm"></i>
                                             </button>
                                         </div>
@@ -73,11 +73,11 @@
 
                         <!-- Update and Remove Buttons -->
                         <div class="row">
-                            <div class="col-6 text-center">
-                                <a class="update-link text-info"><small>Update</small></a>
+                            <div class="col-6 text-center p-5">
+                                <a class="update-link text-white bg-black rounded p-2">Update</a>
                             </div>
-                            <div class="col-6 text-center">
-                                <a class="remove-item text-danger" id="remove_{{ item.item_id }}"><small>Remove</small></a>
+                            <div class="col-6 text-center p-5">
+                                <a class="remove-item text-white bg-danger rounded p-2" id="remove_{{ item.item_id }}">Remove</a>
                             </div>
                         </div>
                     </div>
@@ -94,9 +94,9 @@
         <!-- Total Calculations -->
         <div class="row">
             <div class="col text-right">
-                <h6><strong>Bag Total: ${{ total|floatformat:2 }}</strong></h6>
-                <h6>Delivery: ${{ delivery|floatformat:2 }}</h6>
-                <h4 class="mt-4"><strong>Grand Total: ${{ grand_total|floatformat:2 }}</strong></h4>
+                <p><strong>Bag Total: ${{ total|floatformat:2 }}</strong></p>
+                <p>Delivery: ${{ delivery|floatformat:2 }}</p>
+                <p class="mt-4"><strong>Grand Total: ${{ grand_total|floatformat:2 }}</strong></p>
                 {% if free_delivery_delta > 0 %}
                     <p class="mb-1 text-danger">
                         You could get free delivery by spending just <strong>${{ free_delivery_delta }}</strong> more!
