@@ -27,8 +27,10 @@ def bazaar(request):
             if sortkey == 'name':
                 sortkey = 'lower_name'
                 products = products.annotate(lower_name=Lower('name'))
-            if sortkey == 'category':
+            elif sortkey == 'category':
                 sortkey = 'category__name'
+            elif sortkey == 'rating':
+                sortkey = 'rating'
 
             if 'direction' in request.GET:
                 direction = request.GET['direction']
@@ -139,18 +141,19 @@ def edit_product(request, product_id):
     if request.method == 'POST':
         form = ProductForm(request.POST, request.FILES, instance=product)
         if form.is_valid():
-            form.save()
-            messages.success(
-                request, 'Successfully updated product!'
-                )
-            return redirect(
-                reverse('product_detail', args=[product.id])
-                )
+            # Save the form but don't commit immediately
+            updated_product = form.save(commit=False)
+            # Preserve the current rating
+            updated_product.rating = product.rating
+            # Now save the product
+            updated_product.save()
+            messages.success(request, 'Successfully updated product!')
+            return redirect(reverse('product_detail', args=[product.id]))
         else:
             messages.error(
                 request,
                 'Failed to update product. Please ensure the form is valid.'
-                )
+            )
     else:
         form = ProductForm(instance=product)
         messages.info(request, f'You are editing {product.name}')
@@ -161,6 +164,7 @@ def edit_product(request, product_id):
         'product': product,
     }
     return render(request, template, context)
+
 
 
 @login_required

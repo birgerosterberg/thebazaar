@@ -127,7 +127,7 @@
                                         {% if request.user.is_superuser %}
                                             <small class="ml-3">
                                                 <a href="{% url 'edit_product' product.id %}" class="text-primary font-size-text-md font-weight-bold">Edit</a> | 
-                                                <a class="text-danger font-size-text-md font-weight-bold" href="{% url 'delete_product' product.id %}">Delete</a>
+                                                <a class="text-danger font-size-text-md font-weight-bold" href="{% url 'delete_product' product.id %}" onclick="return confirmDelete();">Delete</a>
                                             </small>
                                         {% endif %}
                                     </div>
@@ -164,4 +164,6 @@
 {% block postloadjs %}
     {{ block.super }}
     <script src="{% static 'js/custom_script.js' %}"></script>
+    <script src="{% static 'js/confirm_del.js' %}"></script>
+
 {% endblock %}

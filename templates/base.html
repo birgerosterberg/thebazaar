@@ -11,12 +11,20 @@
     {% endblock meta %}
     {% block extra_meta %}{% endblock %}
     {% block corecss %}
+    {% comment %} Bootstrap {% endcomment %}
       <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+      {% comment %} Google Fonts {% endcomment %}
       <link rel="preconnect" href="https://fonts.googleapis.com">
       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
       <link href="https://fonts.googleapis.com/css2?family=Alegreya&family=Eczar&display=swap" rel="stylesheet">
+      {% comment %} Mailchimp CSS {% endcomment %}
       <link href="https://cdn-images.mailchimp.com/embedcode/classic-061523.css" rel="stylesheet" type="text/css">
       <link rel="stylesheet" href="{% static 'css/base.css' %}">
+      {% comment %} Favicon {% endcomment %}
+      <link rel="apple-touch-icon" sizes="180x180" href="{% static 'images/apple-touch-icon.png' %}">
+      <link rel="icon" type="image/png" sizes="32x32" href="{% static 'images/favicon-32x32.png' %}">
+      <link rel="icon" type="image/png" sizes="16x16" href="{% static 'images/favicon-16x16.png' %}">
+      <link rel="manifest" href="{% static 'images/site.webmanifest' %}">
     {% endblock corecss %}
     {% block extra_css %}{% endblock extra_css %}
     {% block corejs %}
