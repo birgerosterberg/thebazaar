@@ -1,10 +1,4 @@
 // custom_script.js
-
-// Scroll to top functionality using arrow function
-document.querySelector('.btt-link').addEventListener('click', () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-});
-
 // Sorting selector functionality using arrow function and template literals
 document.querySelector('#sort-selector').addEventListener('change', () => {
     const selector = document.querySelector('#sort-selector');

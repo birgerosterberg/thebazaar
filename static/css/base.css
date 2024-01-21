@@ -28,6 +28,12 @@ body {
 .color-sandlight {
   color: #f3c893;
 }
+.bg-background {
+  background-color: #fff3e0;
+}
+.link-dark-blue {
+ color: #00478F;
+}
 .font-size-text {
   font-size: 1.6rem;
 }
