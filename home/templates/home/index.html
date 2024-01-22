@@ -119,7 +119,7 @@
                         {% if latest_post %}
                             <h4 class="card-title">{{ latest_post.title }}</h4>
                             <div class="card-text">{{ latest_post.content|striptags|truncatewords:50|safe }}</div>
-                            <a href="{% url 'blog_index' %}" class="btn btn-black">Read More</a>
+                            <a href="{% url 'blog_index' %}" class="btn btn-black" aria-labeldby="Link to the blog page">Read on Blog</a>
                         {% else %}
                             <p class="card-text">No recent blog posts.</p>
                         {% endif %}

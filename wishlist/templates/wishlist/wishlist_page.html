@@ -5,7 +5,7 @@
 <div class="container my-4 min-height-100vh">
     <div class="row justify-content-center">
         <div class="col-12">
-            <h2 class="text-center mb-4">{{ request.user.username }}'s Wishlist</h2>
+            <h1 class="text-center mb-4">{{ request.user.username }}'s Wishlist</h1>
             <ul class="list-group">
                 {% for product in request.user.wishlist.products.all %}
                     <li class="list-group-item">
