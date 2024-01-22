@@ -330,6 +330,38 @@ Our marketing strategy is designed to leverage both digital and local platforms,
 
 This marketing strategy is designed to build Sanda Bazaar's brand awareness and customer base, leveraging the power of social media, community engagement, and targeted advertising to attract and retain customers.
 
+### Facebook Marketing Page
+
+I've created a **Facebook Marketing Page** for Sanda Bazaar, demonstrating a move into digital marketing.
+
+*Note:* As the page was created with a new account, it might get deleted by facebook. But, I've saved a couple of images to show it.
+![Profile view](<readme/Skärmbild 2024-01-22 225728.png>)
+![Owner View](<readme/Skärmbild 2024-01-22 225752.png>)
+### Why Facebook?
+
+- **Wide Reach:** Access to a large audience.
+- **Targeted Ads:** Precision in reaching the right customers.
+- **Customer Interaction:** Direct engagement with our audience.
+- **Brand Building:** Enhances visibility and loyalty.
+- **Insights:** Valuable data for strategy refinement.
+
+[Facebook Link](https://www.facebook.com/profile.php?id=61555666149539)
+
+# Newsletter Creation with Mailchimp
+
+I have added a newsletter for Sanda Bazaar using **Mailchimp**, a leading email marketing platform. This newsletter is a crucial tool in our marketing strategy, enhancing our outreach and customer engagement. Our newsletter is a key step in maintaining a strong relationship with our customers, keeping them informed and engaged with our latest news, offers, and insights.
+
+![newsletter](readme/footer/footer-news.png)
+
+## Why Mailchimp for Our Newsletter?
+
+- **User-Friendly Design:** Mailchimp's intuitive design tools made creating professional-looking emails easy.
+- **Targeted Campaigns:** The platform allows for targeted campaigns, ensuring we reach the right audience.
+- **Analytics:** Provides valuable insights on open rates and customer engagement, helping us refine future content.
+- **Automation:** Enables scheduling and automating regular communication with our customers.
+- **Integration:** Seamlessly integrates with other platforms and services we use.
+
+
 [Back to top ⇧](#overview)
 
 ## SEO Strategy for Sanda Bazaar
@@ -474,6 +506,7 @@ This learning journey in Agile methodology underscores the power of structured p
   </details>
 </details>
 
+
 <details>
 <summary style="font-size: larger;">Open Times</summary>
 
@@ -508,6 +541,7 @@ This learning journey in Agile methodology underscores the power of structured p
   </details>
 </details>
 
+
 <details>
 <summary style="font-size: larger;">Blog Functionality</summary>
 
@@ -523,12 +557,324 @@ This learning journey in Agile methodology underscores the power of structured p
   - Offers an overview of all blog posts and simplifies the process of adding new blog posts.
   <details>
   <summary>Blog images</summary>
-  
+
   ![Blog snippet homepage](<readme/blog/home blogpost.png>)
   ![Blog page view](readme/blog/blog-page.png)
   ![Blog admin overview](readme/blog/overview-blog-a.png)
   ![Blog post view](readme/blog/admin-blogpost.png)
  
+  </details>
+</details>
+
+
+<details>
+<summary style="font-size: larger;">Product Features</summary>
+
+- **Bazaar - Product Categories:**
+  - Access to various product categories through the main 'Bazaar' link.
+  - Sub-links for category-based filtering, allowing users to narrow down their search.
+
+- **Sorting Functionality:**
+  - Offers different sorting options, including by rating, price, or popularity.
+  - For instance, selecting 'Rating' organizes products from highest to lowest rated.
+
+- **Products Home:**
+  - A comprehensive view featuring all products without any category filtering.
+  - For general users: Displays product image, name, price, category (clickable), and rating (or 'No rating' if not rated).
+  - Product images are interactive, leading users to detailed product pages.
+
+- **Admin CRUD Functionality:**
+  - Enhanced control for admins on `bazaar.html` and individual product detail pages.
+  - Includes Create, Read, Update, and Delete operations for products.
+  - Safety features like confirmation prompts for deleting products.
+
+- **Product Details Page:**
+  - Detailed view of each product upon clicking its image.
+  - Displays product name, price, category, and rating.
+  - Edit and Delete options for admins, with a focus on ease of administration.
+
+- **Quantity Selection and Bag Addition:**
+  - Users can adjust the quantity of products before adding to the bag.
+  - Interactive - and + buttons for adjusting the number of items.
+  - Confirmation through a toast message, indicating successful addition to the bag and providing a quick link.
+
+- **Admin Product Editing and Adding:**
+  - Dedicated views for admins to edit existing products or add new ones.
+  - Features include image management, detail editing, and category selection.
+  - Reminder to use WEBP format images of 380x380px for consistency.
+
+  <details>
+  <summary>Product Features Images</summary>
+
+  ![products home sort by](<readme/products/Skärmbild 2024-01-22 161359.png>)
+  ![products details](<readme/products/Skärmbild 2024-01-22 161436.png>)
+  ![toast to bag](<readme/products/Skärmbild 2024-01-22 161646.png>)
+  ![add a product](<readme/products/Skärmbild 2024-01-22 161904.png>)
+  ![add product image](<readme/products/Skärmbild 2024-01-22 161912.png>)
+  ![product category](<readme/products/Skärmbild 2024-01-22 162005.png>)
+  ![rating high sortby](<readme/products/Skärmbild 2024-01-22 162035.png>)
+  ![edit product](<readme/products/Skärmbild 2024-01-22 162123.png>)
+  ![edit product image](<readme/products/Skärmbild 2024-01-22 162131.png>)
+  ![safe delete](<readme/products/Skärmbild 2024-01-22 162151.png>)
+
+  </details>
+</details>
+
+
+<details>
+<summary style="font-size: larger;">Shopping Bag Feature</summary>
+
+- **Bag Icon Indication:**
+  - The bag icon on the page header changes color based on its contents.
+  - A yellowish background indicates the presence of items in the bag.
+
+- **Inside the Shopping Bag:**
+  - Displays all items added to the shopping bag.
+  - Each item has options to adjust quantity or remove it from the bag.
+  - Instant update and feedback via a toast message when an item is removed.
+
+- **Quantity Adjustment and Bag Total:**
+  - Users can change the quantity of items directly in the bag.
+  - Updating the quantity recalculates the Bag Total and delivery charges.
+  - Essential for a seamless shopping experience.
+
+- **Empty Bag Notification:**
+  - If the bag is empty, users are clearly informed.
+  - Displays the amount needed to spend for free delivery.
+
+- **Proceeding to Checkout:**
+  - A prominent 'Secure Checkout' button leads users to the checkout page.
+  - Ensures a smooth transition from shopping to completing the purchase.
+
+  <details>
+  <summary>Shopping Bag Features Images</summary>
+
+  ![shopping bag with items](<readme/bag/Skärmbild 2024-01-22 161703.png>)
+  ![remove item](<readme/bag/Skärmbild 2024-01-22 161832.png>)
+  ![empty bag](<readme/bag/Skärmbild 2024-01-22 161845.png>)
+
+  </details>
+</details>
+
+
+<details>
+<summary style="font-size: larger;">Checkout Process</summary>
+
+- **Order Summary:**
+  - Displays a summary of the order including items, quantities, and prices.
+  - Breakdown of Order Total, Delivery Charges, and Grand Total.
+
+- **Delivery Information:**
+  - Fields for entering delivery address and contact information.
+  - Option for logged-in users to save delivery information to their profile.
+
+- **Payment Processing:**
+  - Secure card information input for payment processing.
+  - Integration with Stripe for handling transactions.
+  - Real-time error handling for incorrect or incomplete card details.
+
+- **Order Confirmation:**
+  - On successful payment, redirection to a checkout success page.
+  - Toast message displaying the order number and email confirmation details.
+  - Email confirmation sent to the user's email address.
+
+- **Stripe Webhooks:**
+  - Utilization of Stripe webhooks for backend confirmation of payment success.
+  - Enables real-time tracking and management of transactions.
+
+- **Post-Checkout:**
+  - Email receipt and order details sent to the user.
+  - Option for reviewing and managing the order in the user's account.
+
+  <details>
+  <summary>Checkout Process Images</summary>
+
+  ![checkout details](readme/checkout/checkout-deltails.png)
+  ![order summary](readme/checkout/order-sum.png)
+  ![stripe card input](readme/checkout/card.png)
+  ![information of finished order](readme/checkout/orderinfo.png)
+  ![successful toast](readme/checkout/taost-success.png)
+  ![enail of order](readme/checkout/emailnotice.png)
+  ![payment intent webhook](readme/checkout/payment-intent-webhook.png)
+  ![all webhooks](readme/checkout/webhooks-all.png)
+
+  </details>
+</details>
+
+
+<details>
+<summary style="font-size: larger;">Profile Management</summary>
+
+- **Accessing the Profile:**
+  - 'My Profile' option available in the dropdown under the My account icon in the navbar.
+  - Easily accessible for logged-in users.
+
+- **Updating Default Delivery Information:**
+  - Users can update their default delivery address and contact information.
+  - Simple and intuitive interface for editing and saving new details.
+
+- **Order History Review:**
+  - A comprehensive list of past orders available in the profile.
+  - Each order number is clickable, leading to a detailed order confirmation page.
+  - Toast messages provide additional context and confirmation details for each order.
+
+- **Order Confirmation Details:**
+  - Detailed view of past orders including items purchased, quantities, and total cost.
+  - Useful for tracking previous purchases and order references.
+
+  <details>
+  <summary>Profile Management Images</summary>
+
+  ![My profile main page](<readme/profiles/Skärmbild 2024-01-22 162301.png>)
+  ![Order information](<readme/profiles/Skärmbild 2024-01-22 163543.png>)
+  ![Toast message info in view](<readme/profiles/Skärmbild 2024-01-22 163553.png>)
+
+  </details>
+</details>
+
+
+<details>
+<summary style="font-size: larger;">Product Review and Rating System</summary>
+
+- **Eligibility for Reviewing:**
+  - Only users who have purchased a product can leave a review for it.
+  - Ensures authenticity and relevance of the reviews.
+
+- **Review Submission:**
+  - Simple interface for submitting reviews with a 1 to 5 star rating.
+  - Hover effect on stars for intuitive interaction and ease of use.
+
+- **Visibility of Reviews:**
+  - All visitors can view the ratings and reviews for each product.
+  - Provides transparency and assists in informed purchasing decisions.
+
+- **Average Rating Calculation:**
+  - Automatically updates the product's average rating with each new review.
+  - Helps future customers gauge overall satisfaction with the product.
+
+- **Handling No Reviews:**
+  - If there are no reviews for a product, a clear message indicates this on the page.
+  - Maintains a clean and user-friendly interface.
+
+  <details>
+  <summary>Product Review System Images</summary>
+
+  ![No reviews](<readme/review/Skärmbild 2024-01-22 161443.png>)
+  ![Review with rating](<readme/review/Skärmbild 2024-01-22 162932.png>)
+  ![Write a review and rate](<readme/review/Skärmbild 2024-01-22 163047.png>)
+
+  </details>
+</details>
+
+<details>
+<summary style="font-size: larger;">Wishlist Feature</summary>
+
+- **Adding Products to Wishlist:**
+  - 'Add to Wishlist' button available on each product's detail page.
+  - Allows users to save products they are interested in for future reference.
+
+- **Accessing the Wishlist:**
+  - Users can find their Wishlist under 'My Account' and 'My Wishlist'.
+  - Provides a dedicated space to view all wished-for items.
+
+- **Wishlist Features:**
+  - Displays all products added to the Wishlist.
+  - Each item includes a link back to its detailed product page for easy access.
+  - Option to remove items from the Wishlist with a simple button click.
+
+- **User-Specific Wishlist:**
+  - Wishlist is user-specific, storing desired items for each individual account.
+  - Enhances the shopping experience by allowing users to keep track of their interests.
+
+  <details>
+  <summary>Wishlist Feature Images</summary>
+
+  ![Wishlist page](readme/wishlist.png)
+  ![Product page with add to wishlist button](<readme/products/Skärmbild 2024-01-22 161436.png>)
+
+  </details>
+</details>
+
+<details>
+<summary style="font-size: larger;">Contact Page</summary>
+
+- **Contact Information:**
+  - Provides the physical address of the summer shop.
+  - Includes a mailto link for easy email access.
+  - Features a clickable telephone link (currently a placeholder number).
+
+- **Google Maps Integration:**
+  - Embedded Google Maps to assist customers in finding the shop's location.
+  - Offers a user-friendly and interactive way to view the shop's geographical position.
+
+- **Simplicity and Efficiency:**
+  - The contact page is designed to be straightforward and user-friendly.
+  - Ensures customers can easily find the necessary contact details and shop location.
+
+  <details>
+  <summary>Contact Page Images</summary>
+
+  ![contact page](readme/contact.png)
+
+  </details>
+</details>
+
+<details>
+<summary style="font-size: larger;">FAQ Page</summary>
+
+- **Accordion-Style Questions:**
+  - Questions are listed in an accordion format for efficient browsing.
+  - Users can click on each question to expand and view the corresponding answer.
+
+- **Ease of Use:**
+  - Designed to avoid overwhelming users with text.
+  - Makes it easier to find specific information without scrolling through long text.
+
+- **Frequently Asked Questions:**
+  - Covers a wide range of common queries and concerns.
+  - Answers are concise yet informative, providing quick and clear responses.
+
+- **Benefits of Accordion Layout:**
+  - Enhances user experience by keeping the FAQ page organized and uncluttered.
+  - Facilitates quicker access to relevant information.
+
+  <details>
+  <summary>FAQ Page Images</summary>
+
+  ![Frequently asked questions FAQ](readme/faq.png)
+
+  </details>
+</details>
+
+<details>
+<summary style="font-size: larger;">Website Footer</summary>
+
+- **Visit Us Address:**
+  - Displays the physical address of the shop, inviting users to visit.
+
+- **Privacy Policy Link:**
+  - Provides a direct link to the website's privacy policy page.
+  - Ensures easy access to important legal information regarding user data and privacy.
+
+- **Newsletter Subscription:**
+  - Users can sign up for a newsletter via a subscription form.
+  - Integrated with MailChimp for efficient newsletter management and distribution.
+
+- **Social Media Links:**
+  - Includes links to the website's social media profiles.
+  - Offers users a way to stay connected and updated through various social platforms.
+
+- **Design and Accessibility:**
+  - The footer is designed for ease of navigation and quick access to important links.
+  - Ensures that essential information and features are accessible from every page.
+
+  <details>
+  <summary>Footer Images</summary>
+
+  ![Footer with Address and Privacy Policy Link](readme/footer/footer-address.png)
+  ![Newsletter Subscription Form](readme/footer/footer-news.png)
+  ![Social Media Links in Footer](readme/footer/footer-social.png)
+
   </details>
 </details>
 
@@ -648,8 +994,40 @@ This learning journey in Agile methodology underscores the power of structured p
 
 
 ## Technologies Used
-*List all the technologies, languages, frameworks, and tools used.*
-[Back to top ⇧](#overview)
+
+- **HTML**:
+  - The structure of the Website was developed using HTML as the main language.
+- **CSS**:
+  - The Website was styled using custom CSS in an external file.
+- **JavaScript**:
+  - Used to manipulate the DOM.
+- **Bootstrap**:
+  - Used throughout the site for responsiveness, layout, and predefined style elements.
+- **Font Awesome**:
+  - Used for various icons throughout the site.
+- **Favicon.io**:
+  - Favicon files were created at [Favicon.io Converter](https://favicon.io/favicon-converter/).
+- **Python**:
+  - The main programming language used for the application.
+- **Django**:
+  - Python web framework used for building the application.
+- **AWS**: 
+  - [AWS](https://aws.amazon.com/) - for storing media and static data.
+- **W.A.V.E.**: 
+  - [W.A.V.E.](https://wave.webaim.org/) - for testing accessibility.
+- **ElephantSql**: 
+  - [ElephantSql](https://www.elephantsql.com/) - for hosting the PostgreSQL database migrated from Heroku.
+- **Grammarly**: 
+  - [Grammarly](https://app.grammarly.com/) - for correcting text content.
+- **Balsamiq**: 
+  - [Balsamiq](https://balsamiq.com/wireframes/) - for creating wireframes.
+- **Gmail**: 
+  - [Gmail](https://gmail.com) - for sending emails using the SMTP server.
+- **DrawSQL**: 
+  - [DrawSQL](https://drawsql.app/) - for visual database design and documentation.
+
+
+  [Back to top ⇧](#overview)
 
 
 ## Testing
@@ -659,6 +1037,59 @@ This learning journey in Agile methodology underscores the power of structured p
 
 
 ## Deployment
+
+### Version Control
+
+1. **The Site**
+
+- The Site was created using VSCode workspace and pushed to GitHub.
+
+2. **Adding Files to Staging**
+
+- Run `git add .` to add files to the staging area.
+
+3. **Committing Changes**
+
+- Run `git commit -m "commit message"` to commit changes to the local repository.
+
+4. **Pushing Changes**
+
+- Run `git push` to push committed code to GitHub.
+
+### Forking the Repository
+
+1. **Locate Repository**
+
+- Log into GitHub and locate the repository.
+
+2. **Fork Repository**
+
+- Click the "Fork" button.
+
+### Making a Local Clone
+
+1. **Locate Repository on GitHub**
+
+- Log into GitHub and find the repository.
+
+2. **Copy Repository URL**
+
+- Click the 'Code' dropdown and copy the URL.
+
+3. **Open Git Bash**
+
+- Open Git Bash in your IDE.
+
+4. **Clone Repository**
+
+- Run `git clone <URL>`.
+
+5. **Install Requirements**
+
+- Run `pip install -r requirements.txt` to install the necessary packages.
+
+[Back to top ⇧](#overview)
+
 
 ### Database (ElephantSQL)
 1. Navigate to the [ElephantSQL website](https://www.elephantsql.com/) and log in.
@@ -870,4 +1301,60 @@ Stripe is needed to handle the checkout process when a payment is made. You will
 [Back to top ⇧](#overview)
 
 ## Credits
-*Acknowledge anyone or any resources that helped in my project.*
+
+- [Stack Overflow](https://stackoverflow.com/) \
+  A treasure trove of knowledge that was instrumental in bringing this project to life.
+
+- [dev.to](https://dev.to/) \
+  An invaluable resource full of insightful information.
+
+- [r/django on Reddit](https://www.reddit.com/r/django/) \
+  A fantastic community with a wealth of information to offer.
+
+- [MDN](https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django) \
+  Mozilla's MDN Web Docs—another indispensable resource I can't forget!
+
+- [Django Project Docs DB Model](https://docs.djangoproject.com/en/4.2/topics/db/models/) \
+  Offers excellent explanations for building models.
+
+- [Ask Python's Django Models](https://www.askpython.com/django/django-models) \
+  Yet another incredible resource for understanding model creation.
+
+- [Django Project Forum](https://forum.djangoproject.com/) \
+  The name says it all!
+
+- [CodeInstitute Boutique Ado](https://github.com/Code-Institute-Solutions/boutique_ado_v1/) \
+  A good coder is a lazy coder; much of Sanda Bazaar wouldn't work without this resource!
+
+- [Django AllAuth Docs](https://django-allauth.readthedocs.io/en/latest/) \
+  Comprehensive information on how AllAuth functions.
+
+- [GeeksForGeeks CRUD](https://www.geeksforgeeks.org/class-based-generic-views-django-create-retrieve-update-delete/) \
+  Extremely useful for understanding Views, Templates, and CRUD operations, since it provides many interesting extra links for further study.
+
+- [Bootstrap Documentation](https://getbootstrap.com/docs/5.3/getting-started/introduction/) \
+  Building this project would have been both a headache and a nightmare without this!
+
+- [Gareth McGirr](https://github.com/Gareth-McGirr) \
+  Provided excellent guidance throughout the project.
+
+- [Css Generators](https://css-generators.com/) \
+  For the amazing sitewide background done with pure CSS!
+
+- [Image editing](https://www.iloveimg.com/) \
+  Resizing and cutting out things from images!
+
+- [FontAwesome](https://fontawesome.com/) \
+  Thanks for the simple integration of icons in my life!
+
+- [FreeConvert](https://www.freeconvert.com/) \
+  Quickest and smoothest way to create my WEBP images!
+
+- [Codemy Youtube](https://www.youtube.com/watch?v=u6R4vBa7ZK4&list=PLCC34OHNcOtpRfBYk-8y0GMO4i1p1zn50) \
+  Good extra information on how to build an eCommerce website!
+
+- [TechWithTim   Youtube](https://www.youtube.com/watch?v=IlS1aR_gfzs) \
+  Reminder of what is important when programming!
+
+- [TechWithTim   Youtube](https://www.youtube.com/watch?v=nGIg40xs9e4) \
+  Amazing reminder of Django from time to time!
