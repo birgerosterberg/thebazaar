@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.db.models.functions import Lower, Coalesce
-from django.db.models import Q ,Value, DecimalField
+from django.db.models import Q, Value, DecimalField
 from .models import Product, Category
 from review.models import Review
 from review.views import user_can_review_product, update_product_rating
@@ -31,7 +31,8 @@ def bazaar(request):
                 sortkey = 'category__name'
             elif sortkey == 'rating':
                 products = products.annotate(
-                    actual_rating=Coalesce('rating', Value(0), output_field=DecimalField())
+                    actual_rating=Coalesce(
+                        'rating', Value(0), output_field=DecimalField())
                 )
                 sortkey = 'actual_rating'
 
@@ -167,7 +168,6 @@ def edit_product(request, product_id):
         'product': product,
     }
     return render(request, template, context)
-
 
 
 @login_required
