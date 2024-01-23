@@ -1,6 +1,6 @@
 # Sanda Bazaar
 *A Treasure Trove on Gotland*
-
+![mockup](<readme/Skärmbild 2024-01-23 095423.png>)
 ![Project Image](readme/biglogo50.webp))
 <hr>
 
@@ -248,6 +248,11 @@ body {
   font-family: 'Eczar', serif;
 }
 ```
+### Wireframes
+
+![Desktop Wireframe](readme/desktopw.png)
+![Mobile Wireframe](readme/mobilew.png)
+
 [Back to top ⇧](#overview)
 
 ## Business Model
@@ -987,11 +992,9 @@ This learning journey in Agile methodology underscores the power of structured p
 
 ![Database Model DrawSQL](readme/drawSQL-sanda-bazaar.png)
 
-## Responsive Layout and Design
-[Link to separate testing readme](/TESTING.md)
-
 [Back to top ⇧](#overview)
 
+---
 
 ## Technologies Used
 
