@@ -1303,6 +1303,7 @@ Stripe is needed to handle the checkout process when a payment is made. You will
     ```
 [Back to top ⇧](#overview)
 
+
 ## Credits
 
 - [Stack Overflow](https://stackoverflow.com/) \
@@ -1361,3 +1362,23 @@ Stripe is needed to handle the checkout process when a payment is made. You will
 
 - [TechWithTim   Youtube](https://www.youtube.com/watch?v=nGIg40xs9e4) \
   Amazing reminder of Django from time to time!
+
+
+## Media Credits
+
+- [Malas](https://spiritofeden.com/en) \
+  The Beautifying products comes from this page!
+
+- **Pre-Loved** \
+  Mainly our own images.
+
+- [Candles](https://www.penhaligons.com/) \
+  The candle comes from Penhaligons
+
+- [Soap](https://clausporto.com/) \
+  The Soap comes from Clause Porto
+
+- [Soap nr2](https://www.astierdevillatte.com/en/) \
+  The second soap comes fro Astiere De Vill Latte
+
+[Back to top ⇧](#overview)
